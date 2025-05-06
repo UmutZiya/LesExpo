@@ -738,34 +738,34 @@ input[type="radio"] {
 }
 
 /* Slider container - sadece bir slide gösterir */
-.slider-container {
+.slider-container-section {
   width: 100%;
   overflow: hidden;
 }
 
 /* Slider wrapper */
-.slider-wrapper {
+.slider-wrapper-section {
   width: 300%; /* 3 slide için */
   display: flex;
   transition: transform 0.5s ease-in-out;
 }
 
 /* Slide */
-.section1-slide {
+.slide-section1 {
   width: 33.333%; /* 3 slide için */
   flex-shrink: 0;
 }
 
 /* Radio butonlarına göre slider pozisyonu */
-#slide1:checked ~ .slider-container .slider-wrapper {
+#slide1:checked ~ .slider-container-section .slider-wrapper-section {
   transform: translateX(0);
 }
 
-#slide2:checked ~ .slider-container .slider-wrapper {
+#slide2:checked ~ .slider-container-section .slider-wrapper-section {
   transform: translateX(-33.333%);
 }
 
-#slide3:checked ~ .slider-container .slider-wrapper {
+#slide3:checked ~ .slider-container-section .slider-wrapper-section {
   transform: translateX(-66.666%);
 }
 
@@ -844,7 +844,7 @@ input[type="radio"] {
 
 .event-image {
   flex: 0 0 65%;
-  height: 560px;
+  height:550px;
   overflow: hidden;
 }
 
@@ -940,8 +940,6 @@ input[type="radio"] {
       padding: 10px 20px;
   }
 }
-
-
 
 /* Logo Slider */
 

@@ -246,109 +246,94 @@
   <!-- Section-1 Start -->
   <section class="event-section">
     <div class="event-container">
-      <!-- Slider kontrolleri için gizli radio butonları -->
-      <input type="radio" name="slider" id="slide1" checked>
-      <input type="radio" name="slider" id="slide2">
-      <input type="radio" name="slider" id="slide3">
-
-      <!-- Slider içeriği -->
-      <div class="slider-container">
-        <div class="slider-wrapper">
-          <!-- Slide 1 -->
-          <div class="section1-slide">
-            <div class="event-content">
-              <div class="event-text">
-                <h2 class="event-title">Sektörün Dev Buluşması</h2>
-                <p class="event-description">
-                  Dünyanın <span class="highlight">en büyük ev tekstili</span> buluşması <span
-                    class="highlight">HOMETEX, 20-23 Mayıs 2025</span> tarihlerinde <span class="highlight">İstanbul
-                    Fuar Merkezi</span>'nde düzenleniyor.
-                </p>
-                <a href="#" class="event-button">
-                  <i class="fas fa-arrow-right-long"></i> Katılımcı Listesi
-                </a>
-              </div>
-              <div class="event-image">
-                <img src="./images/SANY.png" alt="HOMETEX Fuarı Görüntüsü">
-              </div>
+        <!-- Slider kontrolleri için gizli radio butonları -->
+        <input type="radio" name="slider" id="slide1" checked>
+        <input type="radio" name="slider" id="slide2">
+        <input type="radio" name="slider" id="slide3">
+        
+        <!-- Slider içeriği -->
+        <div class="slider-container-section">
+            <div class="slider-wrapper-section">
+                <!-- Slide 1 -->
+                <div class="slide-section1">
+                    <div class="event-content">
+                        <div class="event-text">
+                            <h2 class="event-title">Sektörün Dev Buluşması</h2>
+                            <p class="event-description">
+                                Dünyanın <span class="highlight">en büyük ev tekstili</span> buluşması <span class="highlight">HOMETEX, 20-23 Mayıs 2025</span> tarihlerinde <span class="highlight">İstanbul Fuar Merkezi</span>'nde düzenleniyor.
+                            </p>
+                            <a href="#" class="event-button">
+                                <i class="fas fa-arrow-right-long"></i> Katılımcı Listesi
+                            </a>
+                        </div>
+                        <div class="event-image">
+                            <img src="./images/SANY.png" alt="HOMETEX Fuarı Görüntüsü">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="slide-section1">
+                    <div class="event-content">
+                        <div class="event-text">
+                            <h2 class="event-title">Uluslararası Katılım</h2>
+                            <p class="event-description">
+                                <span class="highlight">50+ ülkeden</span> katılımcıların yer alacağı fuarda, <span class="highlight">en yeni tekstil trendleri</span> ve <span class="highlight">inovatif ürünler</span> sergilenecek.
+                            </p>
+                            <a href="#" class="event-button">
+                                <i class="fas fa-arrow-right-long"></i> Detaylı Bilgi
+                            </a>
+                        </div>
+                        <div class="event-image">
+                            <img src="./images/baskanbulusma.webp" alt="HOMETEX Fuarı Görüntüsü">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="slide-section1">
+                    <div class="event-content">
+                        <div class="event-text">
+                            <h2 class="event-title">Özel Etkinlikler</h2>
+                            <p class="event-description">
+                                Fuar süresince <span class="highlight">tasarım atölyeleri</span>, <span class="highlight">sektör panelleri</span> ve <span class="highlight">networking etkinlikleri</span> ile dolu bir program sizleri bekliyor.
+                            </p>
+                            <a href="#" class="event-button">
+                                <i class="fas fa-arrow-right-long"></i> Etkinlik Programı
+                            </a>
+                        </div>
+                        <div class="event-image">
+                          <iframe width="1415" height="900" src="https://www.youtube.com/embed/I_Wu55RfC4I"
+                            title="’Yük Mühendisliği Hizmetleri’ alanında dünyanın ilk fuarı İstanbul’da düzenleniyor"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-
-          <!-- Slide 2 -->
-          <div class="section1-slide">
-            <div class="event-content">
-              <div class="event-text">
-                <h2 class="event-title">Uluslararası Katılım</h2>
-                <p class="event-description">
-                  <span class="highlight">50+ ülkeden</span> katılımcıların yer alacağı fuarda, <span
-                    class="highlight">en yeni tekstil trendleri</span> ve <span class="highlight">inovatif
-                    ürünler</span> sergilenecek.
-                </p>
-                <a href="#" class="event-button">
-                  <i class="fas fa-arrow-right-long"></i> Detaylı Bilgi
-                </a>
-              </div>
-              <div class="event-image">
-                <img src="./images/baskanbulusma.webp" alt="HOMETEX Fuarı Görüntüsü">
-              </div>
+        </div>
+        
+        <!-- Slider navigasyon -->
+        <div class="event-navigation">
+            <div class="nav-buttons">
+                <label for="slide3" class="nav-button prev" id="prev-slide1"><i class="fas fa-chevron-left"></i></label>
+                <label for="slide2" class="nav-button next" id="next-slide1"><i class="fas fa-chevron-right"></i></label>
+                
+                <label for="slide1" class="nav-button prev" id="prev-slide2"><i class="fas fa-chevron-left"></i></label>
+                <label for="slide3" class="nav-button next" id="next-slide2"><i class="fas fa-chevron-right"></i></label>
+                
+                <label for="slide2" class="nav-button prev" id="prev-slide3"><i class="fas fa-chevron-left"></i></label>
+                <label for="slide1" class="nav-button next" id="next-slide3"><i class="fas fa-chevron-right"></i></label>
             </div>
-          </div>
-
-          <!-- Slide 3 -->
-          <div class="section1-slide">
-            <div class="event-content">
-              <div class="event-text">
-                <h2 class="event-title">Özel Etkinlikler</h2>
-                <p class="event-description">
-                  Fuar süresince <span class="highlight">tasarım atölyeleri</span>, <span class="highlight">sektör
-                    panelleri</span> ve <span class="highlight">networking etkinlikleri</span> ile dolu bir program
-                  sizleri bekliyor.
-                </p>
-                <a href="#" class="event-button">
-                  <i class="fas fa-arrow-right-long"></i> Etkinlik Programı
-                </a>
-              </div>
-              <div class="event-image">
-                <iframe width="1415" height="900" src="https://www.youtube.com/embed/I_Wu55RfC4I"
-                  title="’Yük Mühendisliği Hizmetleri’ alanında dünyanın ilk fuarı İstanbul’da düzenleniyor"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-              </div>
+            <div class="nav-dots">
+                <label for="slide1" class="dot" id="dot1"></label>
+                <label for="slide2" class="dot" id="dot2"></label>
+                <label for="slide3" class="dot" id="dot3"></label>
             </div>
-          </div>
         </div>
-      </div>
-
-      <!-- Slider navigasyon -->
-      <div class="event-navigation">
-        <div class="nav-buttons">
-          <label for="slide3" class="nav-button prev" id="prev-slide1"><i class="fas fa-chevron-left"></i></label>
-          <label for="slide2" class="nav-button next" id="next-slide1"><i class="fas fa-chevron-right"></i></label>
-
-          <label for="slide1" class="nav-button prev" id="prev-slide2"><i class="fas fa-chevron-left"></i></label>
-          <label for="slide3" class="nav-button next" id="next-slide2"><i class="fas fa-chevron-right"></i></label>
-
-          <label for="slide2" class="nav-button prev" id="prev-slide3"><i class="fas fa-chevron-left"></i></label>
-          <label for="slide1" class="nav-button next" id="next-slide3"><i class="fas fa-chevron-right"></i></label>
-        </div>
-        <div class="nav-dots">
-          <label for="slide1" class="dot" id="dot1"></label>
-          <label for="slide2" class="dot" id="dot2"></label>
-          <label for="slide3" class="dot" id="dot3"></label>
-        </div>
-      </div>
     </div>
-  </section>
-
-
-
-
-
-
-
-
-
+</section>
 
   <div class="container-fluid logo-slider">
     <div class="logo-slider-container">
