@@ -804,32 +804,33 @@ input[type="radio"] {
 
 .event-title {
   color: #2a7d7d;
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 600;
   margin-bottom: 25px;
 }
 
 .event-description {
-  color: #666;
-  font-size: 16px;
-  line-height: 1.6;
+  color: #000000;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.5;
   margin-bottom: 30px;
 }
 
 .highlight {
-  color: #2a7d7d;
+  color: #0c6464;
   font-weight: 500;
 }
 
 .event-button {
   display: inline-flex;
   align-items: center;
-  background-color: #ff5a6e;
+  background-color: #014c7e;
   color: white;
-  padding: 10px 20px;
+  padding: 12px 20px;
   text-decoration: none;
-  border-radius: 4px;
-  font-size: 14px;
+  border-radius: 5px;
+  font-size: 17px;
   transition: background-color 0.3s;
 }
 
@@ -839,7 +840,7 @@ input[type="radio"] {
 }
 
 .event-button:hover {
-  background-color: #e64d60;
+  background-color: #0a68b4;
 }
 
 .event-image {
@@ -855,8 +856,14 @@ input[type="radio"] {
   display: block;
 }
 
+.event-image iframe {
+  width: 100%;
+  height: 100%;
+  border: none; /* Optional: Removes iframe border */
+}
+
 .event-navigation {
-  background-color: #1cb5b5;
+  background-color: #014c7e;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1102,13 +1109,199 @@ input[type="radio"] {
     }
 }
 
-
-
 @media (max-width: 510px) {
   .logo-slider {
     
   }
 }
+
+/* Gallery Section */
+.gallery-nav-buttons {
+  position: absolute;
+  top: 345px;
+  right: 10px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.nav-button-gallery {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: rgba(19, 35, 47, 0.8);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+  background-color: rgba(19, 35, 47, 1);
+}
+
+.gallery-wrapper {
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 0;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.gallery-wrapper::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.gallery-slider {
+  display: flex;
+  /* Kartlar arasında boşluk olmasın */
+  gap: 0;
+}
+
+.gallery-card {
+  /* Görseldeki gibi daha geniş kartlar */
+  min-width: 300px;
+  flex: 0 0 300px;
+  height: 345px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+  transform-origin: left center; /* Sola sabitlenmiş dönüşüm */
+}
+
+/* Hover effect - card expands to the right */
+.gallery-card:hover {
+  min-width: 350px;
+  flex: 0 0 350px;
+  z-index: 2;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transition: transform 0.5s ease;
+}
+
+.gallery-card:hover .card-image {
+  transform: scale(1.1);
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.gallery-card:hover .card-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  color: white;
+  z-index: 1;
+  /* Yazıların kaybolmaması için */
+  pointer-events: none;
+}
+
+.card-content h3 {
+  margin: 0 0 5px 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.card-content p {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.8;
+  max-width: 90%;
+}
+
+.arrow-button {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  background-color: #ff5c6c;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  /* Ok butonunun tıklanabilir olması için */
+  pointer-events: auto;
+}
+
+.hometex-brand {
+  text-align: center;
+  margin-top: 30px;
+  color: #2dbbc8;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .gallery-card {
+      min-width: 250px;
+      flex: 0 0 250px;
+  }
+  
+  .gallery-card:hover {
+      min-width: 300px;
+      flex: 0 0 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-card {
+      min-width: 100%;
+      flex: 0 0 100%;
+      height: 220px;
+  }
+  
+  .gallery-card:hover {
+      min-width: 100%;
+      flex: 0 0 100%;
+  }
+  
+  .card-content h3 {
+      font-size: 16px;
+  }
+  
+  .card-content p {
+      font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-card {
+      height: 180px;
+  }
+  
+  .nav-button {
+      width: 30px;
+      height: 30px;
+      font-size: 12px;
+  }
+}
+
+
 
 /* Footer Styles */
 .footer {
@@ -1992,7 +2185,8 @@ body {
   }
 }
 .gallery-container {
-  padding: 40px 0;
+  position: relative;
+  padding: 0 0 40px;
 }
 .gallery-title {
   text-align: center;
