@@ -62,142 +62,168 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-/*============= Card-slider 2 JS ================= */
-document.addEventListener('DOMContentLoaded', function() {
-  const cardsData = {
-    gundem: [
-      { image: "./images/card-2-slider-1.png", date: "2024-05-01", tag: "Gündem", title: "Güneş Sektörünün Markalarını Dünya Liderleriyle Buluşturacak 17. SolarEX İstanbul İçin Geri Sayım Başladı!", link: "blog-single-page.html" },
-      { image: "./images/card-2-slider-2.png", date: "2024-05-02", tag: "Gündem", title: "Güneş Sektörünün Markalarını Dünya Liderleriyle Buluşturacak 17. SolarEX İstanbul İçin Geri Sayım Başladı!", link: "blog-single-page.html" },
-      { image: "./images/card-2-slider-6.png", date: "2024-05-02", tag: "Gündem", title: "Güneş Sektörünün Markalarını Dünya Liderleriyle Buluşturacak 17. SolarEX İstanbul İçin Geri Sayım Başladı!", link: "blog-single-page.html" },
-      { image: "./images/card-2-slider-4.png", date: "2024-05-02", tag: "Gündem", title: "Güneş Sektörünün Markalarını Dünya Liderleriyle Buluşturacak 17. SolarEX İstanbul İçin Geri Sayım Başladı!", link: "blog-single-page.html" },
-      { image: "./images/card-2-slider-5.png", date: "2024-05-02", tag: "Gündem", title: "Güneş Sektörünün Markalarını Dünya Liderleriyle Buluşturacak 17. SolarEX İstanbul İçin Geri Sayım Başladı!", link: "blog-single-page.html" },
-      { image: "./images/card-2-slider-6.png", date: "2024-05-02", tag: "Gündem", title: "Güneş Sektörünün Markalarını Dünya Liderleriyle Buluşturacak 17. SolarEX İstanbul İçin Geri Sayım Başladı!", link: "blog-single-page.html" },
-      { image: "./images/card-2-slider-7.png", date: "2024-05-02", tag: "Gündem", title: "Güneş Sektörünün Markalarını Dünya Liderleriyle Buluşturacak 17. SolarEX İstanbul İçin Geri Sayım Başladı!", link: "blog-single-page.html" },
-    ],
-    blog: [
-      { image: "./images/card-2-slider-8.png", date: "2024-03-07", tag: "Blog", title: "Tekstil sektörünün kalbi Bursa Textile Show Fuarı'nda attı.", link: "blog-single-page.html" },
-    ],
-    duyurular: [
-      { image: "./images/card-2-slider-10.jpg", date: "2024-05-04", tag: "Duyuru", title: "Güneş Sektörünün Markalarını Dünya Liderleriyle Buluşturacak 17. SolarEX İstanbul İçin Geri Sayım Başladı!", link: "blog-single-page.html" },
-      { image: "./images/card-2-slider-2.png", date: "2024-05-04", tag: "Duyuru", title: "Güneş Sektörünün Markalarını Dünya Liderleriyle Buluşturacak 17. SolarEX İstanbul İçin Geri Sayım Başladı!", link: "blog-single-page.html" },
-    ],
-    haberler: [
-      { image: "./images/card-2-slider-4.png", date: "2024-05-05", tag: "Haber", title: "Güneş Sektörünün Markalarını Dünya Liderleriyle Buluşturacak 17. SolarEX İstanbul İçin Geri Sayım Başladı!", link: "blog-single-page.html" },
-    ]
-  };
+/*============= Haberler Card Slider JS ================= */
+document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.getElementById("slider-haberler")
+  const prevBtn = document.querySelector(".prev-haberler")
+  const nextBtn = document.querySelector(".next-haberler")
 
-  let swiperInstance = null;
-  const swiperWrapper = document.querySelector('.swiper-wrapper');
-  const cardTemplate = document.getElementById('card-template-2');
-  const categoryTabs = document.querySelectorAll('.category-tab-2');
-  const cardSlider = document.querySelector('.card-slider-2');
+  // Variables for drag functionality
+  let isDragging = false
+  let startPos = 0
+  let currentTranslate = 0
+  let prevTranslate = 0
+  let animationID = 0
+  let currentIndex = 0
 
-  function formatDate(dateString) {
-    const date = new Date(dateString);
-    const options = { year: 'numeric', month: 'short', day: 'numeric' };
-    return {
-      year: date.getFullYear(),
-      day: date.toLocaleDateString('tr-TR', { day: 'numeric', month: 'short' })
-    };
+  // Calculate card width (including margins)
+  function getCardWidth() {
+    const card = document.querySelector(".card-haberler")
+    const cardStyle = window.getComputedStyle(card)
+    const cardWidth = card.offsetWidth
+    const marginRight = Number.parseInt(cardStyle.marginRight)
+    const marginLeft = Number.parseInt(cardStyle.marginLeft)
+    return cardWidth + marginRight + marginLeft
   }
 
-  function createCards(category) {
-    const fragment = document.createDocumentFragment();
-    cardsData[category].forEach(data => {
-      const clone = cardTemplate.content.cloneNode(true);
-      const formattedDate = formatDate(data.date);
-      
-      clone.querySelector('img').src = data.image;
-      clone.querySelector('.date-year-2').textContent = formattedDate.year;
-      clone.querySelector('.date-day-2').textContent = formattedDate.day;
-      clone.querySelector('.card-tag-2').textContent = data.tag;
-      clone.querySelector('.card-title-2').textContent = data.title;
-      clone.querySelector('.card-discover-link-2').href = data.link;
-      
-      fragment.appendChild(clone);
-    });
-    return fragment;
+  // Get number of visible cards based on screen width
+  function getVisibleCards() {
+    const windowWidth = window.innerWidth
+    if (windowWidth < 576) return 1
+    if (windowWidth < 768) return 2
+    if (windowWidth < 992) return 3
+    return 4
   }
 
-  function initSwiper() {
-    swiperInstance = new Swiper('.swiper', {
-      slidesPerView: 'auto',
-      spaceBetween: 30,
-      grabCursor: true,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-        disabledClass: 'swiper-button-disabled',
-      },
-      observer: true,
-      observeParents: true,
-      observeSlideChildren: true,
-      mousewheel: {
-        forceToAxis: true,
-      },
-      touchEventsTarget: 'container',
-      touchRatio: 1,
-      touchAngle: 45,
-      grabCursor: true,
-      breakpoints: {
-        640: {
-          slidesPerView: 2,
-        },
-        1024: {
-          slidesPerView: 3,
-        },
+  // Calculate total number of cards
+  const totalCards = document.querySelectorAll(".card-haberler").length
+
+  // Button click events
+  prevBtn.addEventListener("click", () => {
+    if (currentIndex > 0) {
+      currentIndex--
+      updateSliderPosition()
+    }
+  })
+
+  nextBtn.addEventListener("click", () => {
+    const visibleCards = getVisibleCards()
+    if (currentIndex < totalCards - visibleCards) {
+      currentIndex++
+      updateSliderPosition()
+    }
+  })
+
+  // Update slider position based on current index
+  function updateSliderPosition() {
+    currentTranslate = -currentIndex * getCardWidth()
+    prevTranslate = currentTranslate
+    setSliderPosition()
+  }
+
+  // Set the slider position with transform
+  function setSliderPosition() {
+    slider.style.transform = `translateX(${currentTranslate}px)`
+  }
+
+  // Mouse and Touch Events for drag functionality
+  slider.addEventListener("mousedown", dragStart)
+  slider.addEventListener("touchstart", dragStart)
+  slider.addEventListener("mouseup", dragEnd)
+  slider.addEventListener("touchend", dragEnd)
+  slider.addEventListener("mouseleave", dragEnd)
+  slider.addEventListener("mousemove", drag)
+  slider.addEventListener("touchmove", drag)
+
+  // Prevent context menu on long press
+  slider.addEventListener("contextmenu", (e) => e.preventDefault())
+
+  function dragStart(event) {
+    // Get the correct position whether it's a touch or mouse event
+    startPos = getPositionX(event)
+    isDragging = true
+    animationID = requestAnimationFrame(animation)
+    slider.classList.add("grabbing")
+  }
+
+  function drag(event) {
+    if (isDragging) {
+      const currentPosition = getPositionX(event)
+      currentTranslate = prevTranslate + currentPosition - startPos
+    }
+  }
+
+  function dragEnd() {
+    isDragging = false
+    cancelAnimationFrame(animationID)
+    slider.classList.remove("grabbing")
+
+    // Snap to closest card
+    const movedBy = currentTranslate - prevTranslate
+
+    // If moved enough to change card
+    if (Math.abs(movedBy) > getCardWidth() * 0.3) {
+      if (movedBy < 0) {
+        // Moved right
+        const visibleCards = getVisibleCards()
+        if (currentIndex < totalCards - visibleCards) {
+          currentIndex++
+        }
+      } else {
+        // Moved left
+        if (currentIndex > 0) {
+          currentIndex--
+        }
       }
-    });
+    }
+
+    // Update position to snap to grid
+    currentTranslate = -currentIndex * getCardWidth()
+    prevTranslate = currentTranslate
+
+    setSliderPosition()
   }
 
-  function handleCategoryClick(e) {
-    const category = e.target.dataset.category;
-    
-    categoryTabs.forEach(tab => tab.classList.remove('active'));
-    e.target.classList.add('active');
-    
-    // Kartları gizle
-    cardSlider.style.display = 'none';
-    
-    // Yeni kartları oluştur
-    const newCards = createCards(category);
-    
-    // Eski kartları temizle ve yenilerini ekle
-    swiperWrapper.innerHTML = '';
-    swiperWrapper.appendChild(newCards);
-    
-    // Apply translations to the newly added cards
-    if (typeof i18n_applyTranslations === 'function') {
-        i18n_applyTranslations(i18n_currentLang); // Re-apply translations to the whole page
-    } else {
-        console.error("Translation function (i18n_applyTranslations) not accessible.");
-        // As a fallback, you might manually translate items within swiperWrapper if needed
-    }
-    
-    // Swiper'ı güncelle
-    if (swiperInstance) {
-      swiperInstance.update();
-      swiperInstance.slideTo(0, 0);
-    } else {
-      initSwiper(); // Initialize if it wasn't (should be initialized on load)
-    }
-    
-    // Kartları göster
-    requestAnimationFrame(() => {
-      cardSlider.style.display = 'block';
-    });
+  function animation() {
+    setSliderPosition()
+    if (isDragging) requestAnimationFrame(animation)
   }
 
-  // Event Listeners
-  categoryTabs.forEach(tab => {
-    tab.addEventListener('click', handleCategoryClick);
-  });
+  function getPositionX(event) {
+    return event.type.includes("mouse") ? event.pageX : event.touches[0].clientX
+  }
 
-  // Initial Load
-  const initialCards = createCards('gundem');
-  swiperWrapper.appendChild(initialCards);
-  initSwiper();
-});
+  // Handle window resize
+  window.addEventListener("resize", () => {
+    // Recalculate and update slider position when window is resized
+    updateSliderPosition()
+  })
+
+  // Initialize slider position
+  updateSliderPosition()
+
+  // Add subtle parallax effect to cards
+  document.querySelectorAll(".card-haberler").forEach((card) => {
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect()
+      const x = e.clientX - rect.left
+      const y = e.clientY - rect.top
+
+      const cardImage = card.querySelector(".card-image-haberler img")
+      const moveX = (x - rect.width / 2) / 20
+      const moveY = (y - rect.height / 2) / 20
+
+      cardImage.style.transform = `scale(1.08) translate(${moveX}px, ${moveY}px)`
+    })
+
+    card.addEventListener("mouseleave", () => {
+      const cardImage = card.querySelector(".card-image img")
+      cardImage.style.transform = "scale(1)"
+    })
+  })
+})
+
+
 /*====== index.html js end =============*/
 
 /*====== iletisim.html js start ====*/
