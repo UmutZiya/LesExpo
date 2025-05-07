@@ -803,14 +803,15 @@ input[type="radio"] {
 }
 
 .event-title {
-  color: #2a7d7d;
+  color: #073596;
   font-size: 32px;
   font-weight: 600;
   margin-bottom: 25px;
+  text-transform: uppercase;
 }
 
 .event-description {
-  color: #000000;
+  color: #04244d;
   font-size: 19px;
   font-weight: 600;
   line-height: 1.5;
@@ -818,7 +819,7 @@ input[type="radio"] {
 }
 
 .highlight {
-  color: #0c6464;
+  color: #3f5d8a;
   font-weight: 500;
 }
 
