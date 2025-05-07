@@ -770,23 +770,23 @@ input[type="radio"] {
 }
 
 /* Navigasyon butonlarını gösterme/gizleme */
-.nav-button {
+.nav-button-section1 {
   display: none;
 }
 
-#slide1:checked ~ .event-navigation #prev-slide1,
-#slide1:checked ~ .event-navigation #next-slide1,
-#slide2:checked ~ .event-navigation #prev-slide2,
-#slide2:checked ~ .event-navigation #next-slide2,
-#slide3:checked ~ .event-navigation #prev-slide3,
-#slide3:checked ~ .event-navigation #next-slide3 {
+#slide1:checked ~ .event-navigation-section1 #prev-slide1,
+#slide1:checked ~ .event-navigation-section1 #next-slide1,
+#slide2:checked ~ .event-navigation-section1 #prev-slide2,
+#slide2:checked ~ .event-navigation-section1 #next-slide2,
+#slide3:checked ~ .event-navigation-section1 #prev-slide3,
+#slide3:checked ~ .event-navigation-section1 #next-slide3 {
   display: flex;
 }
 
 /* Aktif dot */
-#slide1:checked ~ .event-navigation #dot1,
-#slide2:checked ~ .event-navigation #dot2,
-#slide3:checked ~ .event-navigation #dot3 {
+#slide1:checked ~ .event-navigation-section1 #dot1,
+#slide2:checked ~ .event-navigation-section1 #dot2,
+#slide3:checked ~ .event-navigation-section1 #dot3 {
   background-color: white;
 }
 
@@ -863,7 +863,7 @@ input[type="radio"] {
   border: none; /* Optional: Removes iframe border */
 }
 
-.event-navigation {
+.event-navigation-section1 {
   background-color: #014c7e;
   display: flex;
   justify-content: space-between;
@@ -871,12 +871,12 @@ input[type="radio"] {
   padding: 15px 50px;
 }
 
-.nav-buttons {
+.nav-buttons-section1 {
   display: flex;
   gap: 10px;
 }
 
-.nav-button {
+.nav-button-section1 {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -888,7 +888,7 @@ input[type="radio"] {
   transition: background-color 0.3s;
 }
 
-.nav-button:hover {
+.nav-button-section1:hover {
   background-color: #f0f0f0;
 }
 
@@ -926,7 +926,7 @@ input[type="radio"] {
       padding: 30px;
   }
   
-  .event-navigation {
+  .event-navigation-section1 {
       padding: 15px 30px;
   }
   
@@ -944,7 +944,7 @@ input[type="radio"] {
       height: 250px;
   }
   
-  .event-navigation {
+  .event-navigation-section1 {
       padding: 10px 20px;
   }
 }
