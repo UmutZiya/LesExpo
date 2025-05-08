@@ -224,7 +224,7 @@ body.menu-open {
     align-items: center;
     padding-bottom: 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    flex-wrap: wrap; /* Küçük ekranlarda alta kayabilir */
+    /* flex-wrap: wrap; Bu satırı kaldırıyoruz */
     gap: 15px; /* Öğeler arasına boşluk */
   }
   
@@ -286,14 +286,16 @@ body.menu-open {
     align-items: center;
     gap: 20px;
     margin-left: auto; /* Arama kutusundan sonra sağa yasla */
+    /* align-self: flex-start; Diğer öğelerle aynı hizada kalmasını sağlar */
+  }
+
+  .menu-header-actions-fs .lang-switch {
+    margin-top: 0 !important;
+    margin-left: 0 !important;
   }
 
   .menu-header-actions-fs .lang-switch a {
     color: rgba(255, 255, 255, 0.7);
-  }
-
-  .menu-header-actions-fs .lang-switch a.active {
-    color: #fff;
   }
 
 
