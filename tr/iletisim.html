@@ -16,12 +16,43 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
-        .container {
+      
+        .container-iletisim {
           max-width: 1200px;
           margin: 0 auto;
           padding: 0 30px;
         }
+
+        .iframe1{
+          width: 100%;
+        }
     
+        .banner {
+      position: relative;
+      background-image: url('./images/banner-3.png'); /* Görselin yolu */
+      background-size: cover;
+      background-position: center;
+      height: 300px; /* Yüksekliği isteğe göre ayarlayın */
+      color: white;
+      font-family: Arial, sans-serif;
+      align-items: center;
+      text-align: center;
+    }
+
+    .banner-yazi {
+      position: relative;
+      font-size: 48px;
+      font-weight: bold;
+      padding-top: 180px;
+      
+    }
+
+    /* .banner-alt-yazi {
+      position: relative;
+      padding-top: 200px;
+      font-size: 18px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    } */
         .contact-container {
           display: flex;
           flex-wrap: wrap;
@@ -39,7 +70,7 @@
         }
     
         .contact-info h5 {
-          color: #3f00ff;
+          color: #111a9c;
           margin-bottom: 10px;
         }
     
@@ -48,27 +79,17 @@
           margin-bottom: 15px;
         }
     
+        .contact-info-footer p {
+          color: #ffffff;
+          margin-bottom: 20px;
+        }
+
         .contact-info p {
-          color: #555;
+          color: #414040;
           margin-bottom: 20px;
         }
     
-        .social-icons i {
-          font-size: 16px;
-          color: #333;
-          border: 1px solid #ccc;
-          border-radius: 50%;
-          padding: 10px;
-          margin-right: 10px;
-          cursor: pointer;
-          transition: all 0.3s ease;
-        }
-    
-        .social-icons i:hover {
-          background-color: #3f00ff;
-          color: white;
-          border-color: #3f00ff;
-        }
+       
     
         .contact-form {
           flex: 1;
@@ -127,7 +148,7 @@
           margin-bottom: 40px;
         }
     
-        .card {
+        .card-iletisim {
           flex: 1;
           min-width: 280px;
           padding: 30px;
@@ -135,14 +156,14 @@
           text-align: center;
         }
     
-        .card i {
+        .card-iletisim i {
           font-size: 36px;
           margin-bottom: 15px;
         }
     
-        .address {
-          background-color: #eef1ff;
-          color: #3f00ff;
+        .address-iletisim {
+          background-color: #b3bde7;
+          color: #3443c9;
         }
     
         .email {
@@ -155,13 +176,13 @@
           color: #f2b100;
         }
     
-        .card h3 {
+        .card-iletisim h3 {
           font-size: 20px;
           margin-bottom: 10px;
           color: #111;
         }
     
-        .card p {
+        .card-iletisim p {
           color: #444;
           line-height: 1.6;
         }
@@ -318,21 +339,19 @@
     </div>
 
 <div class="banner">
-    <img src="images/iletisim-banner.png" alt="">
+  <div class="banner-yazi">LES-EXPO</div>
+  <div class="breadcrumb-1 mt-1">
+    <a href="index.html">Ana Sayfa</a> /
+    <a href="hakkimizda.html" >Hakkımızda</a>
+</div>
 </div>
 
-<div class="container">
+<div class="container-iletisim">
     <section class="contact-container">
       <div class="contact-info">
         <h5>Bize Ulaşın</h5>
         <h2>Detaylı bilgi için</h2>
         <p>Daha fazla bilgi almak için yan taraftaki formu doldurarak bize ulaşabilir ve detaylı bilgi edinebilirsiniz.</p>
-        <div class="social-icons">
-          <i class="fab fa-facebook-f"></i>
-          <i class="fab fa-twitter"></i>
-          <i class="fab fa-pinterest-p"></i>
-          <i class="fab fa-instagram"></i>
-        </div>
       </div>
 
       <div class="contact-form">
@@ -352,23 +371,30 @@
     </section>
 
     <section class="contact-cards">
-      <div class="card address">
+      <div class="card-iletisim address-iletisim">
         <i class="fas fa-map-marker-alt"></i>
         <h3>Adres</h3>
-        <p>Marmara, Kocatepe Cad. No:206F Yeşil Akasya D:11<br>34524 Beylikdüzü/İstanbul / Türkiye</p>
+        <p>Yeşilköy Mah. Atatürk Cad. Hol 1 Blok No:5/2, İç Kapı No:1, Bakırköy, 34149
+          İstanbul, TÜRKİYE</p>
       </div>
-      <div class="card email">
+      <div class="card-iletisim email">
         <i class="fas fa-envelope"></i>
         <h3>E-Posta</h3>
-        <p>info@mamra.com.tr</p>
+        <p>info@les-expo.com</p>
       </div>
-      <div class="card phone">
+      <div class="card-iletisim phone">
         <i class="fas fa-phone-alt"></i>
         <h3>Telefon</h3>
-        <p>+90 (212) 416 44 16</p>
+        <p>0216 526 44 64</p>
       </div>
     </section>
   </div>
+
+  <section>
+    <div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.4858715894916!2d28.823648507992235!3d40.98895529824187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa37998cc3537%3A0xee53d7b87dde799d!2s%C4%B0stanbul%20Fuar%20Merkezi!5e0!3m2!1str!2str!4v1746697199685!5m2!1str!2str" width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="iframe1"></iframe>
+    </div>
+  </section>
 
 
  <!-- Logo Slider -->
@@ -440,13 +466,12 @@
                 <img src="./images/sarı-lesexpo-tr.png" alt="">
 
             </div>
-            <p class="address">Esenşehir Mahallesi Natoyolu Caddesi Hasvatan İş Merkezi No:221/1 Yukarı Dudullu
-                Ümraniye
-                İstanbul</p>
-            <div class="contact-info">
-                <p><i class="fas fa-phone"></i>0216 526 44 64</p>
-                <p><i class="fas fa-fax"></i> 0216 526 44 66</p>
-                <p><i class="fas fa-envelope"></i> info@ymbd.org</p>
+            <p class="address">Yeşilköy Mah. Atatürk Cad. Hol 1 Blok No:5/2, İç Kapı No:1, Bakırköy, 34149
+              İstanbul, TÜRKİYE</p>
+            <div class="contact-info-footer">
+                <p><i class="fas fa-phone"></i> (0212) 468 52 51</p>
+                <p><i class="fas fa-fax"></i> (0212) 468 52 54</p>
+                <p><i class="fas fa-envelope"></i> info@les-expo.com</p>
             </div>
         </div>
 
