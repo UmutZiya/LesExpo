@@ -178,65 +178,307 @@
           <a href="hakkimizda.html">Katılımcı Profili</a>
       </div>
 
-    <div class="container main-container">
-        <div class="row">
-            <!-- Sidebar -->
-            <div class="col-md-3 sidebar-container">
-                <div class="sidebar">
-                    <div class="sidebar-sticky">
-                        <div class="sidebar-header p-3 mb-3 text-center">
-                            <h3 class="" data-translate="hakkimizda.sidebar.mainTitle">LESEXPO</h3>
-                            <p class="text-muted small mb-0" data-translate="hakkimizda.sidebar.subTitle">Hakkında</p>
+ <div class="container my-5">
+        <div class="form-container">
+            <form>
+                <!-- First Row -->
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="sirketAdmini">Şirket Adınız *</label>
+                            <input type="text" class="form-control" id="sirketAdmini" required>
                         </div>
-                        <ul class="nav flex-column">
-                            <!-- Hakkımızda -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="collapse"
-                                    data-bs-target="#hakkimizdaSubmenu" aria-expanded="true">
-                                    <span class="menu-icon"><i class="fas fa-info-circle"></i></span>
-                                    <span data-translate="hakkimizda.sidebar.aboutUs">KATILIMCI</span>
-                                </a>
-                                <div class="collapse show" id="hakkimizdaSubmenu">
-                                    <ul class="nav flex-column submenu">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" href="katilimci-profili.html">
-                                                <i class="fas fa-angle-right me-2"></i>
-                                                <span data-translate="hakkimizda.sidebar.bfmAbout">Katılımcı Profili</span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="on-kayit-formu.html">
-                                                <i class="fas fa-angle-right me-2"></i>
-                                                <span data-translate="hakkimizda.sidebar.ourTeam">Ön Kayıt Formu</span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="neden-katilmalisiniz.html">
-                                                <i class="fas fa-angle-right me-2"></i>
-                                                <span data-translate="hakkimizda.sidebar.presidentMessage">Neden Katılmalısınız ?</span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="fuar-alani.html">
-                                                <i class="fas fa-angle-right me-2"></i>
-                                                <span data-translate="hakkimizda.sidebar.qualityPolicy">Katılımcı Listesi 2025</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="adinaSoyadina">Adınız Soyadınız *</label>
+                            <input type="text" class="form-control" id="adinaSoyadina" required>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="gorevTitle">Göreviniz *</label>
+                            <input type="text" class="form-control" id="gorevTitle" required>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- Main content -->
-            
+
+                <!-- Second Row -->
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="sirketAdresi">Şirket Adresiniz *</label>
+                            <textarea class="form-control" id="sirketAdresi" rows="3" required></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Third Row -->
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="ulke">Ülke *</label>
+                            <select class="form-select" id="ulke" required>
+                                <option value="">Lütfen Seçiniz</option>
+                                <option value="turkiye">Türkiye</option>
+                                <option value="almanya">Almanya</option>
+                                <option value="fransa">Fransa</option>
+                                <option value="ingiltere">İngiltere</option>
+                                <option value="rusya">Rusya</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="sehir">Şehir *</label>
+                            <select class="form-select" id="sehir" required>
+                                <option value="">Lütfen Önce Ülke Seçiniz</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="telefon">Telefon *</label>
+                            <div class="input-group">
+                                <span class="input-group-text" id="phoneCode">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg" alt="TR" width="20" id="countryFlag">
+                                    +90
+                                </span>
+                                <input type="tel" class="form-control" id="telefon" placeholder="501 234 56 78" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fourth Row -->
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="epostaAdresi">E-Posta Adresiniz *</label>
+                            <input type="email" class="form-control" id="epostaAdresi" required>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="webSitesi">Web Sitesi Adresiniz/Giriniz</label>
+                            <input type="url" class="form-control" id="webSitesi">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="faaliyetAlaniniziGiriniz">Faaliyet Alanınızı Giriniz *</label>
+                            <input type="text" class="form-control" id="faaliyetAlaniniziGiriniz" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fifth Row -->
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="urunGrubuGiriniz">Ürün Grubunuzu Giriniz *</label>
+                            <input type="text" class="form-control" id="urunGrubuGiriniz" required>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="markalarinizGiriniz">Markalarınız Giriniz *</label>
+                            <input type="text" class="form-control" id="markalarinizGiriniz" required>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="ayrintiliMerkezi">Ayrintilı Kredilişe Merkezinizi Giriniz *</label>
+                            <input type="text" class="form-control" id="ayrintiliMerkezi" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sixth Row -->
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Firmanızı Ziyaret Etmemizi İster Misiniz? *</label>
+                            <div class="radio-group">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="ziyaret" id="ziyaretEvet" value="evet" required>
+                                    <label class="form-check-label" for="ziyaretEvet">Evet</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="ziyaret" id="ziyaretHayir" value="hayir">
+                                    <label class="form-check-label" for="ziyaretHayir">Hayır</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Fuar Katılım Hakkında Ayrıntılı Bilgi *</label>
+                            <div class="radio-group-form">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="katilim" id="katilimIstiyorum" value="istiyorum" required>
+                                    <label class="form-check-label" for="katilimIstiyorum">İstiyorum</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="katilim" id="katilimIstemiyorum" value="istemiyorum">
+                                    <label class="form-check-label" for="katilimIstemiyorum">İstemiyorum</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="kurulusTarihi">Firmanızın Kuruluş Tarihi *</label>
+                            <input type="date" class="form-control" id="kurulusTarihi" placeholder="GG-AA-YYYY" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seventh Row -->
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="aktiviteTuru">Firmanızın Aktivite Türü *</label>
+                            <select class="form-select" id="aktiviteTuru" required>
+                                <option selected>Seçiniz</option>
+                                <option value="uretici">Üretici</option>
+                                <option value="ithalatci">İthalatçı</option>
+                                <option value="ihracatci">İhracatçı</option>
+                                <option value="distribütor">Distribütör</option>
+                                <option value="toptanci">Toptancı</option>
+                                <option value="perakendeci">Perakendeci</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="ihracatCirosu">Firmanızın İhracat Cirosu *</label>
+                            <div class="input-group">
+                                <span class="input-group-text">USD</span>
+                                <input type="text" class="form-control" id="ihracatCirosu" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="toplamCirosu">Firmanızın Toplam Cirosu *</label>
+                            <div class="input-group">
+                                <span class="input-group-text">USD</span>
+                                <input type="text" class="form-control" id="toplamCirosu" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Eighth Row -->
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="personelSayisi">Firmanızda İstihdam Edilen Personel Sayısı *</label>
+                            <input type="number" class="form-control" id="personelSayisi" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- National Fairs Section -->
+                <div class="section-title mb-3">Firmanızın Ulusal Fuarlara Katılımı</div>
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="ulusalFuarAdi">Fuar Adı</label>
+                            <input type="text" class="form-control" id="ulusalFuarAdi">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="ulusalKatilimYili">Katılım Yılı</label>
+                            <input type="text" class="form-control" id="ulusalKatilimYili">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-12 text-end">
+                        <button type="button" class="btn btn-dark">Yeni Ekle</button>
+                    </div>
+                </div>
+
+                <!-- International Fairs Section -->
+                <div class="section-title mb-3">Firmanızın Uluslararası Fuarlara Katılımı</div>
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="uluslararasiFuarAdi">Fuar Adı</label>
+                            <input type="text" class="form-control" id="uluslararasiFuarAdi">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="uluslararasiKatilimYili">Katılım Yılı</label>
+                            <input type="text" class="form-control" id="uluslararasiKatilimYili">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-12 text-end">
+                        <button type="button" class="btn btn-dark">Yeni Ekle</button>
+                    </div>
+                </div>
+
+                <!-- Certificates Section -->
+                <div class="section-title mb-3">Sertifikalarınız Ve Ödülleriniz</div>
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <div class="file-upload">
+                                <div class="file-select">
+                                    <div class="file-select-button" id="fileName">Dosya Seç</div>
+                                    <div class="file-select-name" id="noFile">Dosya seçilmedi</div>
+                                    <input type="file" name="chooseFile" id="chooseFile">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-12 text-end">
+                        <button type="button" class="btn btn-dark">Yeni Ekle</button>
+                    </div>
+                </div>
+
+                <!-- Terms and Captcha -->
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="termsCheck" required>
+                            <label class="form-check-label" for="termsCheck">
+                                Aydınlatma Metni ve Kişisel Verilerin Kullanılması ve Korunması ile ilgili bilgilendirme yazısını okudum, kabul ediyorum.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="captcha-container">
+                            <img src="/placeholder.svg?height=50&width=150" alt="CAPTCHA" class="captcha-image">
+                            <button type="button" class="btn btn-outline-secondary btn-sm refresh-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+                                    <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="KODU GİRİNİZ" required>
+                            <button class="btn btn-primary" type="submit">Hemen Yanıt Alayım</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
-    <!-- Sidebar mobile toggle button -->
-    <button class="sidebar-toggle-button d-md-none">
-        <i class="fas fa-bars"></i>
-    </button>
 
     <!-- Logo Slider -->
     <div class="container-fluid logo-slider">
@@ -381,6 +623,255 @@
                 button.classList.add('btn-danger');
             });
         });
+
+
+        /* Form Section */
+   // Ülke bilgileri (şehirler, telefon kodu ve bayrak)
+        const countries = {
+            turkiye: {
+                cities: [
+                    { value: "01", text: "Adana" },
+                    { value: "02", text: "Adıyaman" },
+                    { value: "03", text: "Afyonkarahisar" },
+                    { value: "04", text: "Ağrı" },
+                    { value: "05", text: "Amasya" },
+                    { value: "06", text: "Ankara" },
+                    { value: "07", text: "Antalya" },
+                    { value: "08", text: "Artvin" },
+                    { value: "09", text: "Aydın" },
+                    { value: "10", text: "Balıkesir" },
+                    { value: "11", text: "Bilecik" },
+                    { value: "12", text: "Bingöl" },
+                    { value: "13", text: "Bitlis" },
+                    { value: "14", text: "Bolu" },
+                    { value: "15", text: "Burdur" },
+                    { value: "16", text: "Bursa" },
+                    { value: "17", text: "Çanakkale" },
+                    { value: "18", text: "Çankırı" },
+                    { value: "19", text: "Çorum" },
+                    { value: "20", text: "Denizli" },
+                    { value: "21", text: "Diyarbakır" },
+                    { value: "22", text: "Edirne" },
+                    { value: "23", text: "Elazığ" },
+                    { value: "24", text: "Erzincan" },
+                    { value: "25", text: "Erzurum" },
+                    { value: "26", text: "Eskişehir" },
+                    { value: "27", text: "Gaziantep" },
+                    { value: "28", text: "Giresun" },
+                    { value: "29", text: "Gümüşhane" },
+                    { value: "30", text: "Hakkari" },
+                    { value: "31", text: "Hatay" },
+                    { value: "32", text: "Isparta" },
+                    { value: "33", text: "Mersin" },
+                    { value: "34", text: "İstanbul" },
+                    { value: "35", text: "İzmir" },
+                    { value: "36", text: "Kars" },
+                    { value: "37", text: "Kastamonu" },
+                    { value: "38", text: "Kayseri" },
+                    { value: "39", text: "Kırklareli" },
+                    { value: "40", text: "Kırşehir" },
+                    { value: "41", text: "Kocaeli" },
+                    { value: "42", text: "Konya" },
+                    { value: "43", text: "Kütahya" },
+                    { value: "44", text: "Malatya" },
+                    { value: "45", text: "Manisa" },
+                    { value: "46", text: "Kahramanmaraş" },
+                    { value: "47", text: "Mardin" },
+                    { value: "48", text: "Muğla" },
+                    { value: "49", text: "Muş" },
+                    { value: "50", text: "Nevşehir" },
+                    { value: "51", text: "Niğde" },
+                    { value: "52", text: "Ordu" },
+                    { value: "53", text: "Rize" },
+                    { value: "54", text: "Sakarya" },
+                    { value: "55", text: "Samsun" },
+                    { value: "56", text: "Siirt" },
+                    { value: "57", text: "Sinop" },
+                    { value: "58", text: "Sivas" },
+                    { value: "59", text: "Tekirdağ" },
+                    { value: "60", text: "Tokat" },
+                    { value: "61", text: "Trabzon" },
+                    { value: "62", text: "Tunceli" },
+                    { value: "63", text: "Şanlıurfa" },
+                    { value: "64", text: "Uşak" },
+                    { value: "65", text: "Van" },
+                    { value: "66", text: "Yozgat" },
+                    { value: "67", text: "Zonguldak" },
+                    { value: "68", text: "Aksaray" },
+                    { value: "69", text: "Bayburt" },
+                    { value: "70", text: "Karaman" },
+                    { value: "71", text: "Kırıkkale" },
+                    { value: "72", text: "Batman" },
+                    { value: "73", text: "Şırnak" },
+                    { value: "74", text: "Bartın" },
+                    { value: "75", text: "Ardahan" },
+                    { value: "76", text: "Iğdır" },
+                    { value: "77", text: "Yalova" },
+                    { value: "78", text: "Karabük" },
+                    { value: "79", text: "Kilis" },
+                    { value: "80", text: "Osmaniye" },
+                    { value: "81", text: "Düzce" }
+                ],
+                phoneCode: "+90",
+                flagUrl: "https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg",
+                phonePlaceholder: "501 234 56 78"
+            },
+            almanya: {
+                cities: [
+                    { value: "berlin", text: "Berlin" },
+                    { value: "hamburg", text: "Hamburg" },
+                    { value: "munih", text: "Münih" },
+                    { value: "koln", text: "Köln" },
+                    { value: "frankfurt", text: "Frankfurt" },
+                    { value: "stuttgart", text: "Stuttgart" },
+                    { value: "dusseldorf", text: "Düsseldorf" },
+                    { value: "dortmund", text: "Dortmund" },
+                    { value: "essen", text: "Essen" },
+                    { value: "leipzig", text: "Leipzig" },
+                    { value: "bremen", text: "Bremen" },
+                    { value: "dresden", text: "Dresden" },
+                    { value: "hannover", text: "Hannover" },
+                    { value: "nuremberg", text: "Nürnberg" },
+                    { value: "duisburg", text: "Duisburg" }
+                ],
+                phoneCode: "+49",
+                flagUrl: "https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg",
+                phonePlaceholder: "170 1234567"
+            },
+            fransa: {
+                cities: [
+                    { value: "paris", text: "Paris" },
+                    { value: "marseille", text: "Marsilya" },
+                    { value: "lyon", text: "Lyon" },
+                    { value: "toulouse", text: "Toulouse" },
+                    { value: "nice", text: "Nice" },
+                    { value: "nantes", text: "Nantes" },
+                    { value: "strasbourg", text: "Strasbourg" },
+                    { value: "montpellier", text: "Montpellier" },
+                    { value: "bordeaux", text: "Bordeaux" },
+                    { value: "lille", text: "Lille" },
+                    { value: "rennes", text: "Rennes" },
+                    { value: "reims", text: "Reims" },
+                    { value: "toulon", text: "Toulon" },
+                    { value: "grenoble", text: "Grenoble" },
+                    { value: "dijon", text: "Dijon" }
+                ],
+                phoneCode: "+33",
+                flagUrl: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg",
+                phonePlaceholder: "6 12 34 56 78"
+            },
+            ingiltere: {
+                cities: [
+                    { value: "london", text: "Londra" },
+                    { value: "manchester", text: "Manchester" },
+                    { value: "birmingham", text: "Birmingham" },
+                    { value: "leeds", text: "Leeds" },
+                    { value: "liverpool", text: "Liverpool" },
+                    { value: "newcastle", text: "Newcastle" },
+                    { value: "sheffield", text: "Sheffield" },
+                    { value: "bristol", text: "Bristol" },
+                    { value: "nottingham", text: "Nottingham" },
+                    { value: "southampton", text: "Southampton" },
+                    { value: "portsmouth", text: "Portsmouth" },
+                    { value: "oxford", text: "Oxford" },
+                    { value: "cambridge", text: "Cambridge" },
+                    { value: "york", text: "York" },
+                    { value: "brighton", text: "Brighton" }
+                ],
+                phoneCode: "+44",
+                flagUrl: "https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg",
+                phonePlaceholder: "7911 123456"
+            },
+            rusya: {
+                cities: [
+                    { value: "moscow", text: "Moskova" },
+                    { value: "saint-petersburg", text: "St. Petersburg" },
+                    { value: "novosibirsk", text: "Novosibirsk" },
+                    { value: "yekaterinburg", text: "Yekaterinburg" },
+                    { value: "nizhny-novgorod", text: "Nizhny Novgorod" },
+                    { value: "kazan", text: "Kazan" },
+                    { value: "chelyabinsk", text: "Chelyabinsk" },
+                    { value: "omsk", text: "Omsk" },
+                    { value: "samara", text: "Samara" },
+                    { value: "rostov-on-don", text: "Rostov-on-Don" },
+                    { value: "ufa", text: "Ufa" },
+                    { value: "krasnoyarsk", text: "Krasnoyarsk" },
+                    { value: "voronezh", text: "Voronezh" },
+                    { value: "perm", text: "Perm" },
+                    { value: "volgograd", text: "Volgograd" },
+                    { value: "krasnodar", text: "Krasnodar" },
+                    { value: "saratov", text: "Saratov" },
+                    { value: "tyumen", text: "Tyumen" },
+                    { value: "tolyatti", text: "Tolyatti" },
+                    { value: "izhevsk", text: "Izhevsk" }
+                ],
+                phoneCode: "+7",
+                flagUrl: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg",
+                phonePlaceholder: "999 123-45-67"
+            }
+        };
+
+        // Ülke seçildiğinde şehirleri ve telefon kodunu güncelle
+        document.getElementById('ulke').addEventListener('change', function() {
+            const selectedCountry = this.value;
+            const citySelect = document.getElementById('sehir');
+            const phoneCodeElement = document.getElementById('phoneCode');
+            const countryFlagElement = document.getElementById('countryFlag');
+            const phoneInput = document.getElementById('telefon');
+            
+            // Şehir seçeneğini temizle
+            citySelect.innerHTML = '';
+            
+            // Eğer bir ülke seçilmişse
+            if (selectedCountry) {
+                const countryData = countries[selectedCountry];
+                
+                // İlk seçenek olarak "Lütfen Seçiniz" ekle
+                const defaultOption = document.createElement('option');
+                defaultOption.value = '';
+                defaultOption.text = 'Lütfen Seçiniz';
+                citySelect.appendChild(defaultOption);
+                
+                // Seçilen ülkenin şehirlerini ekle
+                countryData.cities.forEach(city => {
+                    const option = document.createElement('option');
+                    option.value = city.value;
+                    option.text = city.text;
+                    citySelect.appendChild(option);
+                });
+                
+                // Telefon kodu ve bayrağı güncelle
+                phoneCodeElement.innerHTML = `
+                    <img src="${countryData.flagUrl}" alt="${selectedCountry}" width="20" id="countryFlag">
+                    ${countryData.phoneCode}
+                `;
+                
+                // Telefon placeholder'ını güncelle
+                phoneInput.placeholder = countryData.phonePlaceholder;
+            } else {
+                // Eğer ülke seçilmemişse, varsayılan mesajı göster
+                const defaultOption = document.createElement('option');
+                defaultOption.value = '';
+                defaultOption.text = 'Lütfen Önce Ülke Seçiniz';
+                citySelect.appendChild(defaultOption);
+                
+                // Varsayılan telefon kodu ve bayrağı göster (Türkiye)
+                phoneCodeElement.innerHTML = `
+                    <img src="${countries.turkiye.flagUrl}" alt="TR" width="20" id="countryFlag">
+                    ${countries.turkiye.phoneCode}
+                `;
+                
+                // Varsayılan telefon placeholder'ı
+                phoneInput.placeholder = countries.turkiye.phonePlaceholder;
+            }
+        });
+
+        // Dosya seçimi için
+        document.getElementById('chooseFile').addEventListener('change', function() {
+            const fileName = this.files[0] ? this.files[0].name : 'Dosya seçilmedi';
+            document.getElementById('noFile').textContent = fileName;
+        });
+      
 
     </script>
 
