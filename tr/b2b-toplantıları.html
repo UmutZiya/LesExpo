@@ -32,7 +32,7 @@
       position: relative;
       font-size: 48px;
       font-weight: bold;
-      padding-top: 180px;
+      padding-top: 178px;
       
     }
       </style>
@@ -132,7 +132,7 @@
             <ul>
               <li><a href="ziyaretci-profili.html">Ziyaretçi Profili</a></li>
               <li><a href="neden-ziyaret-etmelisiniz.html">Neden Ziyaret Etmelisiniz ?</a></li>
-              <li><a href="ulasim-servis.html">Ulaşım / Servis</a></li>
+              <li><a href="sss.html">Sıkça Sorulan Sorular</a></li>
             </ul>
           </div>
           <div class="menu-column">
@@ -173,7 +173,7 @@
 
     <div class="banner">
         <div class="banner-yazi">LES-EXPO</div>
-        <div class="breadcrumb-1 mt-1">
+        <div class="breadcrumb-1">
           <a href="index.html">Ana Sayfa</a> /
           <a href="hakkimizda.html">Katılımcı Profili</a>
       </div>
@@ -224,7 +224,10 @@
                 </div>
             </div>
             <!-- Main content -->
-            
+            <div class="content-area">
+              <img src="./images/b2brightimage.jpg" class="w-100" alt="">
+
+            </div>
         </div>
     </div>
     <!-- Sidebar mobile toggle button -->
@@ -337,7 +340,7 @@
                     <ul>
                         <li><a href="ziyaretci-profili.html">Ziyaretçi Profili</a></li>
                         <li><a href="neden-ziyaret-etmelisiniz.html">Neden Ziyaret Etmelisiniz?</a></li>
-                        <li><a href="ulasim-servis.html">Ulaşım / Servis</a></li>
+                        <li><a href="sss.html">Sıkça Sorulan Sorular</a></li>
                     </ul>
                 </div>
 
@@ -375,6 +378,17 @@
                 button.classList.add('btn-danger');
             });
         });
+
+        /* Navbar Fixed */
+      window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.main-header');
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+
 
     </script>
 

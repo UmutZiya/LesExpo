@@ -33,8 +33,115 @@
       font-size: 48px;
       font-weight: bold;
       padding-top: 178px;
-      
     }
+
+ .faq-container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        .faq-title {
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #212529;
+            font-size: 2rem;
+        }
+        
+        .divider {
+            height: 3px;
+            background-color: #e63946;
+            margin-bottom: 2rem;
+        }
+        
+        .accordion-item {
+            margin-bottom: 1rem;
+            border: none;
+        }
+        
+        .accordion-button {
+            background-color: #e9ecef !important;
+            color: #212529;
+            font-weight: 500;
+            padding: 1rem 1.25rem;
+            border-radius: 4px !important;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            color: #212529;
+            box-shadow: none;
+        }
+        
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: transparent;
+        }
+        
+        .accordion-button::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230d3b66'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        }
+        
+        .accordion-body {
+            padding: 1.5rem;
+            background-color: #fff;
+            border-radius: 0 0 4px 4px;
+        }
+        
+        .question-marks {
+            position: relative;
+        }
+        
+        .question-mark {
+            position: absolute;
+            color: #0d3b66;
+            opacity: 0.8;
+        }
+        
+        .question-mark-1 {
+            font-size: 5rem;
+            top: 0;
+            right: 20px;
+        }
+        
+        .question-mark-2 {
+            font-size: 3.5rem;
+            top: 80px;
+            right: 80px;
+        }
+        
+        .question-mark-3 {
+            font-size: 7rem;
+            top: 150px;
+            right: 0;
+        }
+        
+        .question-mark-4 {
+            font-size: 4rem;
+            top: 250px;
+            right: 60px;
+        }
+        
+        .right-border {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 3px;
+            height: 100%;
+            background-color: #e63946;
+        }
+        
+        @media (max-width: 992px) {
+            .question-marks {
+                display: none;
+            }
+            
+            .right-border {
+                display: none;
+            }
+        }
+
+
       </style>
 </head>
 
@@ -132,7 +239,7 @@
             <ul>
               <li><a href="ziyaretci-profili.html">Ziyaretçi Profili</a></li>
               <li><a href="neden-ziyaret-etmelisiniz.html">Neden Ziyaret Etmelisiniz ?</a></li>
-              <li><a href="sss.html">Sıkça Sorulan Sorular</a></li>
+             <li><a href="sss.html">Sıkça Sorulan Sorular</a></li>
             </ul>
           </div>
           <div class="menu-column">
@@ -177,6 +284,7 @@
           <a href="index.html">Ana Sayfa</a> /
           <a href="hakkimizda.html">Katılımcı Profili</a>
       </div>
+      
 
     <div class="container main-container">
         <div class="row">
@@ -205,13 +313,13 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link active" href="neden-ziyaret-etmelisiniz.html">
+                                            <a class="nav-link" href="neden-ziyaret-etmelisiniz.html">
                                                 <i class="fas fa-angle-right me-2"></i>
                                                 <span data-translate="hakkimizda.sidebar.ourTeam">Neden Ziyaret Etmelisiniz ?</span>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="sss.html">
+                                            <a class="nav-link active" href="sss.html">
                                                 <i class="fas fa-angle-right me-2"></i>
                                                 <span data-translate="hakkimizda.sidebar.presidentMessage">Sıkça Sorulan Sorular</span>
                                             </a>
@@ -224,145 +332,137 @@
                 </div>
             </div>
             <!-- Main content -->
-      <div class="container-nze content-area">
-        <div class="card-grid-nze">
-            <!-- Kart 1 -->
-            <div class="card-nze">
-                <div class="icon-nze">
-                    <i class="fas fa-lightbulb"></i>
+    <div class=" content-area">
+       <div class="container-sss faq-container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="faq-title">Ziyaretçiler Tarafından Sıkça Sorulan Sorular (S.S.S.)</h1>
+                <div class="divider"></div>
+            </div>
+        </div>
+        
+        <div class="row position-relative">
+            <div class="col-lg-9">
+                <div class="accordion" id="faqAccordion">
+                    <!-- FAQ Item 1 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                Ziyaretçi Kaydını nasıl yapabilirim?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Ziyaretçi kaydınızı web sitemizin ana sayfasındaki "Ziyaretçi Kaydı" bölümünden çevrimiçi olarak yapabilirsiniz. Ayrıca etkinlik günü girişte de kayıt yaptırabilirsiniz, ancak çevrimiçi kayıt daha hızlı giriş sağlayacaktır.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 2 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Fuar giriş ücreti nedir?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Fuarımıza giriş ücreti 50 TL'dir. Öğrenciler için indirimli giriş ücreti 25 TL'dir. 12 yaş altı çocuklar için giriş ücretsizdir.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 3 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Fuarın Ziyaret Saatleri Neler?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Fuar hafta içi 10:00-18:00, hafta sonu 10:00-20:00 saatleri arasında ziyarete açıktır. Son giriş kapanıştan 1 saat öncedir.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 4 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Fuar Yerleşim Planını nereden bulabilirim?
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Fuar yerleşim planını web sitemizin "Fuar Planı" bölümünden indirebilirsiniz. Ayrıca fuar girişinde ücretsiz olarak basılı plan temin edebilirsiniz.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 5 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                Konferans Programına katılmak için herhangi bir ücret ödemem gerekiyor mu?
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Fuar giriş bileti ile tüm konferans programlarına ücretsiz katılabilirsiniz. Özel atölyeler için ek ücret talep edilebilir, bu bilgileri etkinlik programında görebilirsiniz.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 6 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSix">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                Katılımcı Listesi'ne nereden ulaşabilirim?
+                            </button>
+                        </h2>
+                        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Katılımcı listesine web sitemizin "Katılımcılar" bölümünden ulaşabilirsiniz. Liste düzenli olarak güncellenmektedir.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 7 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSeven">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                Fuar Alanı tam olarak nerede yer alıyor?
+                            </button>
+                        </h2>
+                        <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Fuar, İstanbul Fuar Merkezi'nde gerçekleştirilecektir. Adres: Fuar Caddesi No:1, Bakırköy/İstanbul. Toplu taşıma ve özel araç ile ulaşım bilgilerini "Ulaşım" sayfamızda bulabilirsiniz.
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <p class="card-text-nze">Sektördeki Yenilikleri Keşfedin.</p>
             </div>
             
-            <!-- Kart 2 -->
-            <div class="card-nze">
-                <div class="icon-nze">
-                    <i class="far fa-handshake"></i>
+            <div class="col-lg-3 d-none d-lg-block">
+                <div class="question-marks">
+                    <div class="question-mark question-mark-1">?</div>
+                    <div class="question-mark question-mark-2">?</div>
+                    <div class="question-mark question-mark-3">?</div>
+                    <div class="question-mark question-mark-4">?</div>
                 </div>
-                <p class="card-text-nze">Lider Firmalarla Tanışın.</p>
-            </div>
-          
-                <div class="card-nze">
-                <div class="icon-nze">
-                 <i class="fa-solid fa-award"></i>
-                </div>
-                <p class="card-text-nze">Eğitim ve Seminer Fırsatları.</p>
-            </div>
-          
-                <div class="card-nze">
-                <div class="icon-nze">
-                    <i class="fa-solid fa-network-wired"></i>
-                </div>
-                <p class="card-text-nze">Ağ Kurma İmkanları.</p>
-            </div>
-          
-                <div class="card-nze">
-                <div class="icon-nze">
-                    <i class="fa-solid fa-globe"></i>
-                </div>
-                <p class="card-text-nze">Geleceğe Yön Verecek Teknolojiler.</p>
             </div>
             
-            <!-- Kart 3 -->
-            <div class="card-nze">
-                <div class="icon-nze">
-                    <i class="fas fa-cubes"></i>
-                </div>
-                <p class="card-text-nze">Sektörel Çözümleri Bir Arada Görün.</p>
-            </div>
-            
-            <!-- Kart 4 -->
-            <div class="card-nze">
-                <div class="icon-nze">
-                    <i class="fas fa-leaf"></i>
-                </div>
-                <p class="card-text-nze">Sürdürülebilirlik Çözümleri Keşfedin</p>
-            </div>
-            
-            <!-- Kart 5 -->
-            <div class="card-nze">
-                <div class="icon-nze">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-                <p class="card-text-nze">Rekabetçi Avantaj Kazanın</p>
-            </div>
-            
-            <!-- Kart 6 -->
-            <div class="card-nze">
-                <div class="icon-nze">
-                    <i class="fas fa-industry"></i>
-                </div>
-                <p class="card-text-nze">Endüstriyel Altyapı İhtiyacınızı Karşılayın </p>
-            </div>
+            <div class="right-border d-none d-lg-block"></div>
         </div>
     </div>
-        </div>
+    </div>
+ </div>
     </div>
     <!-- Sidebar mobile toggle button -->
     <button class="sidebar-toggle-button d-md-none">
         <i class="fas fa-bars"></i>
     </button>
-
-    <!-- Logo Slider -->
-    <div class="container-fluid logo-slider">
-        <div class="logo-slider-container">
-            <!-- First Slide -->
-            <div class="logo-slide">
-                <a href="https://www.tetsiad.org.tr" class="logo-link" target="_blank">
-                    <div class="logo-img-container">
-                        <img src="./images/btso-logo.png" alt="TETSİAD" class="logo-img-slider">
-                    </div>
-                    <div class="logo-text"></div>
-                </a>
-                <a href="https://www.kfa.com.tr" class="logo-link" target="_blank">
-                    <div class="logo-img-container">
-                        <img src="./images/kfa-logo.png" alt="KFA" class="logo-img-slider">
-                    </div>
-                    <div class="logo-text"></div>
-                </a>
-                <a href="https://www.tobb.org.tr" class="logo-link" target="_blank">
-                    <div class="logo-img-container">
-                        <img src="./images/logo-beyaz.png" alt="TOBB" class="logo-img-slider">
-                    </div>
-                    <div class="logo-text"></div>
-                </a>
-                <a href="https://www.tetsiad.org.tr" class="logo-link" target="_blank">
-                    <div class="logo-img-container">
-                        <img src="./images/ifmlogo_300x130.png" alt="TETSİAD" class="logo-img-slider">
-                    </div>
-                    <div class="logo-text"></div>
-                </a>
-            </div>
-
-            <!-- Second Slide (duplicate for seamless looping) -->
-            <div class="logo-slide">
-                <a href="https://www.tetsiad.org.tr" class="logo-link" target="_blank">
-                    <div class="logo-img-container">
-                        <img src="./images/btso-logo.png" alt="TETSİAD" class="logo-img-slider">
-                    </div>
-                    <div class="logo-text"></div>
-                </a>
-                <a href="https://www.kfa.com.tr" class="logo-link" target="_blank">
-                    <div class="logo-img-container">
-                        <img src="./images/kfa-logo.png" alt="KFA" class="logo-img-slider">
-                    </div>
-                    <div class="logo-text"></div>
-                </a>
-                <a href="https://www.tobb.org.tr" class="logo-link" target="_blank">
-                    <div class="logo-img-container">
-                        <img src="./images/logo-beyaz.png" alt="TOBB" class="logo-img-slider">
-                    </div>
-                    <div class="logo-text"></div>
-                </a>
-                <a href="https://www.tetsiad.org.tr" class="logo-link" target="_blank">
-                    <div class="logo-img-container">
-                        <img src="./images/ifmlogo_300x130.png" alt="TETSİAD" class="logo-img-slider">
-                    </div>
-                    <div class="logo-text"></div>
-                </a>
-            </div>
-        </div>
-    </div>
 
     <!-- Footer Start -->
     <footer class="footer">

@@ -72,7 +72,7 @@ ul {
 
 /* Ana Header (Navbar) */
 .main-header {
-  position: absolute;
+  position: fixed;
   /* Sayfa içeriğinin üzerine çıkar */
   top: 0;
   left: 0;
@@ -86,6 +86,13 @@ ul {
   background-color: transparent;
   /* Başlangıçta şeffaf */
   transition: background-color 0.3s ease;
+}
+
+.main-header.scrolled {
+  background-color: var(--thirdcolor); /* İsteğe göre renk */
+  color: black; /* Yazı rengi değişebilir */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  height: 18%;
 }
 
 /* Logo ayarı */
@@ -2484,6 +2491,7 @@ body {
 
   .sidebar.show {
     transform: translateX(0);
+    height: 100%;
   }
 
   .sidebar-toggle-button {
@@ -3944,3 +3952,54 @@ label {
     font-size: 14px;
   }
 }
+
+/* Neden Ziyaret Etmelisiniz */
+
+.container-nze {
+    min-height: 82vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.card-grid-nze {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card-nze {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 180px;
+}
+
+.icon-nze {
+    font-size: 28px;
+    color: #1a3b5d;
+    margin-bottom: 15px;
+}
+
+.card-text-nze {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Responsive tasarım */
+
+@media (max-width: 992px) {
+    .card-grid-nze {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+

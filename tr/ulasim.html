@@ -18,7 +18,7 @@
   <style>
     .banner {
       position: relative;
-      background-image: url('./images/banner-3.png');
+      background-image: url('./images/LES\ 5.jpg');
       /* Görselin yolu */
       background-size: cover;
       background-position: center;
@@ -128,7 +128,7 @@
         <ul>
           <li><a href="ziyaretci-profili.html">Ziyaretçi Profili</a></li>
           <li><a href="neden-ziyaret-etmelisiniz.html">Neden Ziyaret Etmelisiniz ?</a></li>
-          <li><a href="ulasim-servis.html">Ulaşım / Servis</a></li>
+       <li><a href="sss.html">Sıkça Sorulan Sorular</a></li>
         </ul>
       </div>
       <div class="menu-column">
@@ -438,7 +438,7 @@
             <ul>
               <li><a href="ziyaretci-profili.html">Ziyaretçi Profili</a></li>
               <li><a href="neden-ziyaret-etmelisiniz.html">Neden Ziyaret Etmelisiniz?</a></li>
-              <li><a href="ulasim-servis.html">Ulaşım / Servis</a></li>
+             <li><a href="sss.html">Sıkça Sorulan Sorular</a></li>
             </ul>
           </div>
 
@@ -476,6 +476,17 @@
           button.classList.add('btn-danger');
         });
       });
+
+      /* Navbar Fixed */
+      window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.main-header');
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+
 
     </script>
 
