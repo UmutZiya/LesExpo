@@ -532,7 +532,7 @@ ul {
 
   /* Header'ı daha kompakt hale getir */
   .main-header {
-    height: 80px !important;
+    height: 93px !important;
   }
 
   .slider-container {
@@ -2547,6 +2547,8 @@ body {
   padding-top: 88px;
 }
 
+
+
 .header-text-kunye {
   color: #6b6b6b;
   font-size: 14px;
@@ -2614,7 +2616,8 @@ kunye-h2 {
 }
 
 .calendar-header-kunye {
-  background-color: #f9f9f9;
+  background-color: var(--thirdcolor);
+  color: #fff;
   padding: 10px;
   font-weight: bold;
   border-bottom: 1px solid #e0e0e0;
@@ -2632,7 +2635,7 @@ kunye-h2 {
 }
 
 .salon-number-kunye {
-  background-color: #e74c3c;
+  background-color: var(--thirdcolor);
   color: white;
   padding: 5px 10px;
   font-weight: bold;
@@ -2640,9 +2643,10 @@ kunye-h2 {
 }
 
 .sidebar-kunye h3 {
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: 500;
   margin-bottom: 15px;
-  color: #ffffff;
+  color: #000000;
 }
 
 .info-item-kunye {
