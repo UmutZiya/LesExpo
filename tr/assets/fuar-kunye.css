@@ -1,3 +1,10 @@
+:root {
+  --primarycolor: #FBAD18;
+  --secondarycolor: #85837D;
+  --thirdcolor: #0c243d;
+}
+
+
 .container-kunye {
   display: flex;
   flex-wrap: wrap;

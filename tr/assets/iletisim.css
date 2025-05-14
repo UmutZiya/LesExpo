@@ -1,3 +1,10 @@
+ :root {
+  --primarycolor: #FBAD18;
+  --secondarycolor: #85837D;
+  --thirdcolor: #0c243d;
+}
+
+
  .container-iletisim {
       max-width: 1200px;
       margin: 0 auto;

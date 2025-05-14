@@ -1,3 +1,10 @@
+:root {
+  --primarycolor: #FBAD18;
+  --secondarycolor: #85837D;
+  --thirdcolor: #0c243d;
+}
+
+
 
 .container-ziyaretci {
   padding: 40px 20px;

@@ -1,3 +1,9 @@
+:root {
+  --primarycolor: #FBAD18;
+  --secondarycolor: #85837D;
+  --thirdcolor: #0c243d;
+}
+
 
 .news-container {
   max-width: 920px;

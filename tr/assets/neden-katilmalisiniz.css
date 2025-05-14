@@ -1,4 +1,11 @@
 
+:root {
+  --primarycolor: #FBAD18;
+  --secondarycolor: #85837D;
+  --thirdcolor: #0c243d;
+}
+
+
 .container-nk {
   max-width: 1200px;
   width: 100%;

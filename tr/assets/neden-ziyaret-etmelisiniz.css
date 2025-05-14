@@ -1,4 +1,12 @@
 /* Neden ziyaret etmelisiniz ve katılımcı profilinin ortak css dosyası */
+
+:root {
+  --primarycolor: #FBAD18;
+  --secondarycolor: #85837D;
+  --thirdcolor: #0c243d;
+}
+
+
 .container-nze {
     min-height: 82vh;
     display: flex;
