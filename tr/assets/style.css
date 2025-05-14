@@ -1126,8 +1126,8 @@ ul {
 }
 
 .logo-img-slider {
-  width: 212px;
-  height: 90px;
+  width: 310px;
+  height: 160px;
   filter: grayscale(100%);
   transition: all 0.3s;
 }
@@ -2933,7 +2933,6 @@ kunye-h2 {
     font-size: 1rem;
   }
 }
-
 
 .fuar-container {
   display: flex;
