@@ -35,7 +35,6 @@
                     </div>
                     <div class="logo-info">
                         <div class="logo-title">${logo.title}</div>
-                        <div class="logo-description">${logo.description}</div>
                         <span class="logo-format">${logo.format}</span>
                     </div>
                     <button class="download-btn" onclick="downloadLogo(${logo.id})">Logoyu İndir</button>

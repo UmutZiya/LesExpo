@@ -62,6 +62,17 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+      /* Navbar Fixed */
+      window.addEventListener('scroll', function () {
+        const navbar = document.querySelector('.main-header');
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+
+
 /*============= Haberler Card Slider JS ================= */
 document.addEventListener("DOMContentLoaded", () => {
   const slider = document.getElementById("slider-haberler")
