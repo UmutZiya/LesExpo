@@ -71,3 +71,5 @@
 
         // Sayfa yüklendiğinde logoları render et
         document.addEventListener('DOMContentLoaded', renderLogos);
+
+/*====================================================LOGO END=================================================================*/

@@ -83,14 +83,10 @@ function createCard(cardData) {
         </div>
         <div class="card-content-blogs">
             <div class="card-category-blogs">${cardData.category}</div>
-            <h3 class="card-title-blogs">${cardData.title}</h3>
-          
-           
-               
+            <h3 class="card-title-blogs">${cardData.title}</h3>   
             </div>
         </div>
     `
-
   // Add click event listener to the card
   card.addEventListener("click", function (e) {
     // Stop event propagation to prevent other elements from receiving the click
