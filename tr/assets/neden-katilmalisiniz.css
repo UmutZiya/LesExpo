@@ -32,8 +32,9 @@
 .features-nk {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   gap: 30px;
+  margin-left: 33%;
+  margin-top: 1rem;
 }
 
 .feature-item-nk {
@@ -68,6 +69,7 @@
 @media (max-width: 768px) {
   .features-nk {
     gap: 20px;
+     margin-left: 0;
   }
 
   .feature-item-nk {
@@ -92,6 +94,7 @@
   .features-nk {
     flex-direction: column;
     align-items: center;
+    margin-left: 0;
   }
 
   .feature-item-nk {

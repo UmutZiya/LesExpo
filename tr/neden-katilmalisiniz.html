@@ -10,6 +10,7 @@
   <!-- Css -->
   <link rel="stylesheet" href="./assets/style.css">
   <link rel="stylesheet" href="./assets/neden-katilmalisiniz.css">
+  <link rel="stylesheet" href="./assets/katilimci-profili.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
@@ -184,63 +185,35 @@
       <a href="neden-katilmalisiniz.html">Neden Katılmalısınız</a>
     </div>
 
-    <div class="container main-container">
-      <div class="row">
-        <!-- Sidebar -->
-        <div class="col-md-3 sidebar-container">
-          <div class="sidebar">
-            <div class="sidebar-sticky">
-              <div class="sidebar-header p-3 mb-3 text-center">
-                <h3 class="text-white" >LESEXPO</h3>
-                <p class="text-white small mb-0 " >Hakkında</p>
-              </div>
-              <ul class="nav flex-column">
-                <!-- Hakkımızda -->
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="collapse"
-                    data-bs-target="#hakkimizdaSubmenu" aria-expanded="true">
-                    <span class="menu-icon"><i class="fas fa-info-circle"></i></span>
-                    <span data-translate="hakkimizda.sidebar.aboutUs">KATILIMCI</span>
-                  </a>
-                  <div class="collapse show" id="hakkimizdaSubmenu">
-                    <ul class="nav flex-column submenu">
-                      <li class="nav-item">
-                        <a class="nav-link" href="katilimci-profili.html">
-                          <i class="fas fa-angle-right me-2"></i>
-                          <span data-translate="hakkimizda.sidebar.bfmAbout">Katılımcı Profili</span>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="on-kayit-formu.html">
-                          <i class="fas fa-angle-right me-2"></i>
-                          <span data-translate="hakkimizda.sidebar.ourTeam">Ön Kayıt Formu</span>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link active" href="neden-katilmalisiniz.html">
-                          <i class="fas fa-angle-right me-2"></i>
-                          <span data-translate="hakkimizda.sidebar.presidentMessage">Neden Katılmalısınız ?</span>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="fuar-alani.html">
-                          <i class="fas fa-angle-right me-2"></i>
-                          <span data-translate="hakkimizda.sidebar.qualityPolicy">Katılımcı Listesi 2025</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
         <!-- Main content -->
-        <div class="container-nk content-area">
-        <div class="header-nk">
-            <h1><span class="orange">NEDEN</span><br>KATILMALISINIZ?</h1>
-        </div>
-        
+      
+    <!-- Sidebar mobile toggle button -->
+    <button class="sidebar-toggle-button d-md-none">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <section id="nedenkatilmalisiniz" class="fuar-container">
+      <div class="fuar-left">
+        <img src="./images/textileshow-blog.png" alt="Rising City Görseli" class="fuar-image">
+      </div>
+      <div class="fuar-right">
+        <p class="subtitle-3">LES-EXPO Yük Mühendisliği Hizmetleri Fuarı</p>
+        <h1>NEDEN KATILMALISINIZ ?</h1>
+        <p class="intro">
+          Yük Mühendisliği Hizmetleri Fuarı, taşıyıcı sistem çözümleri, ağır yük mühendisliği, yapı güvenliği ve
+          endüstriyel altyapı projeleri alanındaki son gelişmeleri bir araya getirerek sektöre yön veriyor...
+        </p>
+        <ul class="benefits">
+          <li>Ağır yük mühendisliği alanındaki en yeni ürün, yazılım ve teknolojileri yakından inceleme fırsatı ✓</li>
+          <li>Potansiyel iş ortakları ve müşterilerle birebir görüşmeler yaparak iş hacmini artırma ✓</li>
+          <li>Marka bilinirliğini artırarak sektörde uzmanlığınızı ön plana çıkarma ✓</li>
+          <li>Rakip firmaların çözümlerini gözlemleyerek stratejik avantajlar elde etme ✓</li>
+          <li>Proje sahiplerinden ve mühendislerden doğrudan geri bildirim alma ve hizmetlerinizi geliştirme şansı ✓</li>
+          <li>Uluslararası katılımcılarla bağlantı kurarak ihracat fırsatlarını değerlendirme </li>
+        </ul>
+        <a href="on-kayit-formu.html" class="btn-kp">Yerinizi Ayırtın</a>
+      </div>
+             
         <div class="features-nk">
             <div class="feature-item-nk">
                 <div class="icon-container-nk">
@@ -269,36 +242,7 @@
                 </div>
                 <p>Global Ağ Kurma<br>İmkanları</p>
             </div>
-        </div>
-    </div>
-      </div>
-    </div>
-    <!-- Sidebar mobile toggle button -->
-    <button class="sidebar-toggle-button d-md-none">
-      <i class="fas fa-bars"></i>
-    </button>
-
-    <section id="nedenkatilmalisiniz" class="fuar-container">
-      <div class="fuar-left">
-        <img src="./images/textileshow-blog.png" alt="Rising City Görseli" class="fuar-image">
-      </div>
-      <div class="fuar-right">
-        <p class="subtitle-3">LES-EXPO Yük Mühendisliği Hizmetleri Fuarı</p>
-        <h1>NEDEN KATILMALISINIZ ?</h1>
-        <p class="intro">
-          Yük Mühendisliği Hizmetleri Fuarı, taşıyıcı sistem çözümleri, ağır yük mühendisliği, yapı güvenliği ve
-          endüstriyel altyapı projeleri alanındaki son gelişmeleri bir araya getirerek sektöre yön veriyor...
-        </p>
-        <ul class="benefits">
-          <li>Ağır yük mühendisliği alanındaki en yeni ürün, yazılım ve teknolojileri yakından inceleme fırsatı ✓</li>
-          <li>Potansiyel iş ortakları ve müşterilerle birebir görüşmeler yaparak iş hacmini artırma ✓</li>
-          <li>Marka bilinirliğini artırarak sektörde uzmanlığınızı ön plana çıkarma ✓</li>
-          <li>Rakip firmaların çözümlerini gözlemleyerek stratejik avantajlar elde etme ✓</li>
-          <li>Proje sahiplerinden ve mühendislerden doğrudan geri bildirim alma ve hizmetlerinizi geliştirme şansı ✓</li>
-          <li>Uluslararası katılımcılarla bağlantı kurarak ihracat fırsatlarını değerlendirme </li>
-        </ul>
-        <a href="on-kayit-formu.html" class="btn-kp">Yerinizi Ayırtın</a>
-      </div>
+        </div>  
     </section>
 
     <!-- Logo Slider -->
