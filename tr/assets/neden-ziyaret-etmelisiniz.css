@@ -22,6 +22,14 @@
     gap: 20px;
 }
 
+.h1-ziyaretci {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #000000;
+}
+
+
 .card-nze {
     background-color: #fff;
     border-radius: 15px;
