@@ -68,6 +68,14 @@
   margin-bottom: 40px;
 }
 
+.h1-ziyaretci {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #000000;
+}
+
+
 .header-kp h1 {
   font-size: 3rem;
   margin-bottom: 10px;
