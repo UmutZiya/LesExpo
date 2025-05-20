@@ -28,6 +28,10 @@
     input[type="radio"] {
       display: none;
     }
+
+    body {
+      background-color: #0c243d;
+    }
   </style>
 </head>
 
@@ -142,8 +146,8 @@
         <ul>
           <li><a href="medya-logo.html">Logo</a></li>
           <li><a href="tum-haberler.html">Haberler</a></li>
-          <li><a href="galeri.html">Galeri</a></li>
-          <li><a href="kurumsal-kimlik.html">Kurumsal Kimlik</a></li>
+          <li><a href="#">Galeri</a></li>
+          <li><a href="#">Kurumsal Kimlik</a></li>
         </ul>
       </div>
 
@@ -239,112 +243,77 @@
   <!-- Slider End -->
 
   <!-- Section-1 Start -->
-  <section class="event-section">
-    <div class="event-container">
-      <!-- Slider kontrolleri için gizli radio butonları -->
-      <input type="radio" name="slider" id="slide1" checked>
-      <input type="radio" name="slider" id="slide2">
-      <input type="radio" name="slider" id="slide3">
-
-      <!-- Slider içeriği -->
-      <div class="slider-container-section">
-        <div class="slider-wrapper-section">
-          <!-- Slide 1 -->
-          <div class="slide-section1">
-            <div class="event-content">
-              <div class="event-text">
-                <h2 class="event-title">SEKTÖRÜN DEV BULUŞMASI</h2>
-                <p class="event-description">
-                  LES-EXPO <span class="highlight">Yük Mühendisliği </span> hizmetleri fuarı <span
-                    class="highlight">9-11
-                    Eylül </span> tarihlerinde <span class="highlight">İstanbul Fuar Merkezi</span>'nde düzenleniyor.
-                </p>
-                <a href="#" class="event-button">
-                  <i class="fas fa-arrow-right-long"></i> Detaylı Bilgi
-                </a>
-              </div>
-              <div class="event-image">
-                <img src="./images/SANY.png" alt="LES-EXPO Fuarı Görüntüsü">
-              </div>
+  <section class="section-1-sc">
+    <div class="slider-container-sc">
+      <div class="slider-sc">
+        <!-- Slide 1 -->
+        <div class="slide-sc active-sc">
+          <div class="slide-content-sc">
+            <div class="text-content-sc">
+              <h2 class="mt-5">Mühendislik gerektiren yük taşımacılığının tüm paydaşlarını buluşturacak olan <span
+                  class="highlight-sc">LES-EXPO Fuarı'nın iş birliği protokolü imzalandı.</span></h2>
+              <p>Türkiye ekonomisine yaklaşık 12 milyar doların üzerinde katkı sağlayan yük mühendisliği hizmetleri
+                ekosistemindeki hizmet alan ve hizmet verenleri bir araya getirecek ilk ihtisas fuarı <span
+                  class="highlight-sc">ve İstanbul'da düzenleniyor.</span></p>
+              <a href="blog-single-page.html" class="btn-sc">Detaylı Bilgi</a>
             </div>
-          </div>
-
-          <!-- Slide 2 -->
-          <div class="slide-section1">
-            <div class="event-content">
-              <div class="event-text">
-                <h2 class="event-title">ESTA 2025 MÜKEMMELLİK ÖDÜLLERİ SAHİPLERİNİ BULDU!</h2>
-                <p class="event-description">
-                  <span class="highlight">YMB üyesi YILNAK Eğitim kategorisinde ödülün sahibi oldu</span> <span
-                    class="highlight"></span><span class="highlight">
-                  </span>
-                </p>
-                <a href="#" class="event-button">
-                  <i class="fas fa-arrow-right-long"></i> Detaylı Bilgi
-                </a>
-              </div>
-              <div class="event-image">
-                <img src="./images/ymb-odul.jpeg" alt="LES-EXPO Fuarı Görüntüsü">
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 3 -->
-          <div class="slide-section1">
-            <div class="event-content">
-              <div class="event-text">
-                <h2 class="event-title"></h2>
-                <p class="event-description">
-                  Mühendislik gerektiren yük taşımaılığının tüm paydaşlarını buluşturacak olan <span
-                    class="highlight">LES-EXPO Fuarı'nın iş birliği protokolü imzalandı</span>. <span
-                    class="highlight">Türkiye ekonomisine yaklaşık 12 milyar doların üzerinde katkı sağlayan yük
-                    mühendisliği hizmetleri ekosistemindeki hizmet alan ve hizmet verenleri bir araya getirecek ilk
-                    ihtisas fuarı </span> ve <span class="highlight">İstanbul'da düzenleniyor.</span>
-
-                </p>
-                <a href="#" class="event-button">
-                  <i class="fas fa-arrow-right-long"></i> Detaylı Bilgi
-                </a>
-              </div>
-              <div class="event-image">
-                <iframe width="1415" height="900" src="https://www.youtube.com/embed/I_Wu55RfC4I"
-                  title="'Yük Mühendisliği Hizmetleri' alanında dünyanın ilk fuarı İstanbul'da düzenleniyor"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-              </div>
+            <div class="media-content-sc">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/I_Wu55RfC4I"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Slider navigasyon -->
-      <div class="event-navigation-section1">
-        <div class="nav-buttons-section1">
-          <label for="slide3" class="nav-button-section1 prev" id="prev-slide1"><i
-              class="fas fa-chevron-left"></i></label>
-          <label for="slide2" class="nav-button-section1 next" id="next-slide1"><i
-              class="fas fa-chevron-right"></i></label>
-
-          <label for="slide1" class="nav-button-section1 prev" id="prev-slide2"><i
-              class="fas fa-chevron-left"></i></label>
-          <label for="slide3" class="nav-button-section1 next" id="next-slide2"><i
-              class="fas fa-chevron-right"></i></label>
-
-          <label for="slide2" class="nav-button-section1 prev" id="prev-slide3"><i
-              class="fas fa-chevron-left"></i></label>
-          <label for="slide1" class="nav-button-section1 next" id="next-slide3"><i
-              class="fas fa-chevron-right"></i></label>
+        <!-- Slide 2 -->
+        <div class="slide-sc">
+          <div class="slide-content-sc">
+            <div class="text-content-sc">
+              <h2><span class="highlight-sc">ESTA 2025 MÜKEMMELLİK ÖDÜLLERİ SAHİPLERİNİ BULDU!</span></h2>
+              <p>YMB üyesi YILNAK Eğitim kategorisinde ödülün sahibi oldu</p>
+              <a href="blog-single-page.html" class="btn-sc">Detaylı Bilgi</a>
+            </div>
+            <div class="media-content-sc">
+              <img src="./images/ymb-odul.jpeg" alt="Yük taşımacılığı teknolojileri">
+            </div>
+          </div>
         </div>
-        <div class="nav-dots">
-          <label for="slide1" class="dot" id="dot1"></label>
-          <label for="slide2" class="dot" id="dot2"></label>
-          <label for="slide3" class="dot" id="dot3"></label>
+
+        <!-- Slide 3 -->
+        <div class="slide-sc">
+          <div class="slide-content-sc">
+            <div class="text-content-sc">
+              <h2><span class="highlight-sc">SEKTÖRÜN DEV BULUŞMASI</span></h2>
+              <p>LES-EXPO Yük Mühendisliği hizmetleri fuarı 9-11 Eylül tarihlerinde İstanbul Fuar Merkezi'nde düzenleniyor.</p>
+              <a href="blog-single-page.html" class="btn-sc">Detaylı Bilgi</a>
+            </div>
+            <div class="media-content-sc">
+              <img src="./images/SANY.png" alt="Sürdürülebilir lojistik">
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- Separate Controls Container -->
+    <div class="controls-container-sc">
+      <!-- Navigation Arrows on the left -->
+      <div class="arrows-container-sc">
+        <button class="arrow-sc prev-arrow-sc"><i class="fas fa-chevron-left"></i></button>
+        <button class="arrow-sc next-arrow-sc"><i class="fas fa-chevron-right"></i></button>
+      </div>
+
+      <!-- Pagination Dots on the right -->
+      <div class="pagination-sc">
+        <span class="dot-sc active-sc" data-index="0"></span>
+        <span class="dot-sc" data-index="1"></span>
+        <span class="dot-sc" data-index="2"></span>
+      </div>
+    </div>
   </section>
-  <section class="hero-gallery">
+
+  <section class="mt-5">
 
   </section>
   <!-- Gallery Wrapper -->
@@ -469,7 +438,7 @@
             </div>
           </div>
         </div>
-         <!-- Card 9 -->
+        <!-- Card 9 -->
         <div class="gallery-card">
           <div class="card-image" style="background-image: url('./images/LES\ 5.jpg');">
             <div class="card-overlay"></div>
@@ -480,12 +449,12 @@
             </div>
           </div>
         </div>
-         <!-- Card 9 -->
+        <!-- Card 9 -->
         <div class="gallery-card">
           <div class="card-image" style="background-image: url('./images/LES\ 4.jpg');">
             <div class="card-overlay"></div>
             <div class="card-content">
-              <h3>12.	Mühendislik Hizmetleri Şirketleri</h3>
+              <h3>12. Mühendislik Hizmetleri Şirketleri</h3>
               <p></p>
 
             </div>
@@ -505,10 +474,13 @@
           şekilde kaldırılması, taşınması ve yerleştirilmesi süreçlerini kapsayan çok disiplinli bir alandır. Bu süreç
           yalnızca araçlarla değil, bu araçları yöneten uzman mühendislerin planlama, analiz ve kararlarıyla
           gerçekleşir.</p>
-        <p class="description-3">Resmi olarak tanımlanmamış olsa da yük mühendisliği; kara, hava, deniz ve demiryoluyla,
-          hatta bazen denizaltında yapılan ağır taşıma operasyonlarında risk analizi, zemin değerlendirmesi, araç seçimi
+        <p class="description-3">Resmi olarak tanımlanmamış olsa da yük mühendisliği; kara, hava, deniz ve
+          demiryoluyla,
+          hatta bazen denizaltında yapılan ağır taşıma operasyonlarında risk analizi, zemin değerlendirmesi, araç
+          seçimi
           ve uygulama takibi gibi kritik süreçleri kapsar.</p>
-        <p class="description-3">Teknolojinin, iklimin ve projelerin değişimiyle birlikte, taşınan yüklerin çeşitliliği
+        <p class="description-3">Teknolojinin, iklimin ve projelerin değişimiyle birlikte, taşınan yüklerin
+          çeşitliliği
           artmakta ve bu durum yük mühendisliği uzmanlarının gelecekteki rolünü daha da hayati hale getirmektedir.</p>
         <a href="on-kayit-formu.html" class="button" target="_blank">
           Yerinizi Ayırtın
@@ -525,7 +497,8 @@
     <div class="text-content-4">
       <h2>YÜK MÜHENDİSLİĞİNDE GELECEĞİ LES-EXPO FUARINDA ŞEKİLLENİYOR</h2>
       <p>
-        LES-EXPO 2025, yük mühendisliği sektöründeki en yeni gelişmeleri, teknolojileri ve yenilikçi çözümleri bir araya
+        LES-EXPO 2025, yük mühendisliği sektöründeki en yeni gelişmeleri, teknolojileri ve yenilikçi çözümleri bir
+        araya
         getiriyor. Alanında uzman firmaların ve profesyonellerin katılımıyla gerçekleşecek olan bu fuar, sektördeki en
         son trendleri ve mühendislikteki devrim niteliğindeki yenilikleri keşfetmeniz için eşsiz bir fırsat sunuyor.
         <br><br>
