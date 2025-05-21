@@ -11,8 +11,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
   <!-- Css -->
-  <link rel="stylesheet" href="./assets/style.css">
-  <link rel="stylesheet" href="./assets/home.css">
+  <link rel="stylesheet" href="../tr/assets/style.css">
+  <link rel="stylesheet" href="../tr/assets/index.css">
   <!-- Font Awesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,6 +28,449 @@
     input[type="radio"] {
       display: none;
     }
+
+    body {
+      background-color: #0c243d;
+    }
+
+
+    /* Section 1 event section */
+    .section-1-sc {
+      margin-top: 15px;
+    }
+
+    /* Slider Container */
+    .slider-container-sc {
+      position: relative;
+      max-width: 1400px;
+      width: 95%;
+      margin: 0 auto;
+      overflow: hidden;
+      background-color: #0a1e3c;
+      border-radius: 12px 12px 0 0;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Main Slider */
+    .slider-sc {
+      position: relative;
+      width: 100%;
+      height: 550px;
+    }
+
+    /* Slides */
+    .slide-sc {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.8s ease, transform 0.8s ease, visibility 0.8s;
+      transform: scale(1.05);
+    }
+
+    .slide-sc.active-sc {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+      z-index: 1;
+    }
+
+    .slide-sc.prev-sc {
+      transform: translateX(-5%);
+    }
+
+    .slide-sc.next-sc {
+      transform: translateX(5%);
+    }
+
+    /* Slide Content Layout */
+    .slide-content-sc {
+      display: flex;
+      height: 100%;
+      width: 100%;
+    }
+
+    /* Text Content */
+    .text-content-sc {
+      flex: 1;
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: white;
+      min-width: 0;
+      /* Prevent text from expanding container */
+      overflow: hidden;
+      /* Prevent text overflow */
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .text-content-sc h2 {
+      font-size: 32px;
+      margin-bottom: 25px;
+      line-height: 1.3;
+      font-weight: 600;
+    }
+
+    .text-content-sc p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .highlight-sc {
+      color: #f7a600;
+      font-weight: 600;
+    }
+
+    /* Button Styling */
+    .btn-sc {
+      display: inline-block;
+      background-color: #f7a600;
+      color: white;
+      padding: 14px 28px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 16px;
+      transition: all 0.3s;
+      align-self: flex-start;
+      margin-top: 15px;
+      box-shadow: 0 4px 10px rgba(247, 166, 0, 0.3);
+    }
+
+    .btn-sc:hover {
+      background-color: #e69500;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(247, 166, 0, 0.4);
+    }
+
+    /* Media Content */
+    .media-content-sc {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+      background-color: #0a1e3c;
+      /* Changed from black to match slider background */
+      min-width: 0;
+      /* Prevent media from expanding container */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .media-content-sc img,
+    .media-content-sc iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      /* Keep contain to preserve aspect ratio */
+      transition: transform 0.5s ease;
+      background-color: #0a1e3c;
+      /* Match background color */
+    }
+
+    .slide-sc.active-sc .media-content-sc img,
+    .slide-sc.active-sc .media-content-sc iframe {
+      transform: scale(1);
+    }
+
+    /* Controls Container */
+    .controls-container-sc {
+      position: relative;
+      max-width: 1400px;
+      width: 95%;
+      margin: 0 auto;
+      background-color: #f7a600;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 0 0 12px 12px;
+      padding: 0 30px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Arrows Container */
+    .arrows-container-sc {
+      display: flex;
+      align-items: center;
+    }
+
+    /* Navigation Arrows */
+    .arrow-sc {
+      width: 44px;
+      height: 44px;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+      position: relative;
+      margin-right: 15px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .arrow-sc:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .arrow-sc:active {
+      transform: translateY(0);
+    }
+
+    /* Pagination Dots */
+    .pagination-sc {
+      display: flex;
+      gap: 12px;
+    }
+
+    .dot-sc {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dot-sc::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      border-radius: 50%;
+      transform: scale(0);
+      transition: transform 0.3s ease;
+    }
+
+    .dot-sc.active-sc::after {
+      transform: scale(1);
+    }
+
+    .dot-sc:hover {
+      transform: scale(1.1);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+      .slider-sc {
+        height: 500px;
+      }
+
+      .text-content-sc {
+        padding: 40px;
+      }
+
+      .text-content-sc h2 {
+        font-size: 28px;
+      }
+
+      .text-content-sc p {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .slide-content-sc {
+        flex-direction: column-reverse;
+      }
+
+      .text-content-sc {
+        padding: 30px;
+        height: 45%;
+        width: 100%;
+        overflow-y: auto;
+        /* Allow scrolling if content is too large */
+      }
+
+      .text-content-sc h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+      }
+
+      .text-content-sc p {
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+
+      .media-content-sc {
+        height: 55%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .media-content-sc img,
+      .media-content-sc iframe {
+        position: relative;
+        /* Changed from absolute to relative */
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        /* Ensure full image is visible */
+        background-color: #0a1e3c;
+        /* Match background color */
+      }
+
+      .slider-sc {
+        height: 600px;
+      }
+
+      .slider-container-sc,
+      .controls-container-sc {
+        width: 95%;
+      }
+
+      .btn-sc {
+        padding: 12px 24px;
+        font-size: 15px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .slider-sc {
+        height: 550px;
+      }
+
+      .media-content-sc {
+        height: 55%;
+        /* Reduced to give more space to text */
+      }
+
+      .text-content-sc {
+        height: 45%;
+        /* Increased to ensure text is fully visible */
+        padding: 25px;
+        padding-top: 30px;
+        /* Extra padding at top to ensure first line is visible */
+      }
+
+      .text-content-sc h2 {
+        font-size: 22px;
+        margin-bottom: 12px;
+      }
+
+      .text-content-sc p {
+        font-size: 15px;
+        margin-bottom: 15px;
+      }
+
+      .btn-sc {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+
+      .controls-container-sc {
+        height: 50px;
+        padding: 0 20px;
+      }
+
+      .arrow-sc {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+        margin-right: 10px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .slider-sc {
+        height: 520px;
+        /* Increased height */
+      }
+
+      .media-content-sc {
+        height: 50%;
+        /* Reduced to give more space to text */
+      }
+
+      .text-content-sc {
+        height: 50%;
+        /* Increased to ensure text is fully visible */
+        padding: 20px;
+        padding-top: 25px;
+        /* Extra padding at top */
+      }
+
+      .text-content-sc h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      .text-content-sc p {
+        font-size: 14px;
+        margin-bottom: 12px;
+      }
+
+      .arrow-sc {
+        width: 34px;
+        height: 34px;
+        font-size: 14px;
+        margin-right: 8px;
+      }
+
+      .dot-sc {
+        width: 10px;
+        height: 10px;
+      }
+
+      .controls-container-sc {
+        height: 45px;
+        width: 100%;
+        padding: 0 15px;
+      }
+
+      .slider-container-sc {
+        width: 100%;
+        border-radius: 8px 8px 0 0;
+      }
+
+      .controls-container-sc {
+        border-radius: 0 0 8px 8px;
+      }
+
+      .pagination-sc {
+        gap: 8px;
+      }
+
+      .btn-sc {
+        padding: 8px 16px;
+        font-size: 13px;
+        margin-top: 8px;
+      }
+    }
   </style>
 </head>
 
@@ -35,7 +478,7 @@
   <!-- Header Start -->
   <header class="main-header">
     <div class="container-navbar">
-      <a href="index.html" class="logo mt-5">
+      <a href="home.html" class="logo mt-5">
         <!-- Gerçek logo dosyanızın yolunu buraya ekleyin -->
         <img src="./images/sarı-lesexpo-en.png" class="" alt="">
       </a>
@@ -53,16 +496,16 @@
                 class="fas fa-chevron-down"></i></a></li>
           <li><a href="#" class="nav-toggle-button" data-translate="nav.events">Media<i
                 class="fas fa-chevron-down"></i></a></li>
-          <li><a href="iletisim.html" data-translate="nav.contactUs">Contact</a></li>
+          <li><a href="contact.html" data-translate="nav.contactUs">Contact</a></li>
         </ul>
 
       </nav>
 
       <div class="header-actions">
         <div class="lang-switch mt-4 ms-4">
-          <a href="online-bilet.html" class="trigger-button">Online Ticket</a>
-          <a href="../tr/index.html" class="" data-lang="tr" data-translate="lang.tr">TR</a> | <a href="home.html"
-            class="active" data-lang="en" data-translate="lang.en">EN</a>
+          <a href="online-bilet.html" class="trigger-button">Onlıne Ticket</a>
+          <a href="../tr/index.html" class="" data-lang="tr" data-translate="lang.tr">TR</a> | <a
+            href="../en/soon.html" class="active" data-lang="en" data-translate="lang.en">EN</a>
         </div>
         <!-- nav-toggle-button class'ı menüyü açar -->
 
@@ -85,14 +528,14 @@
       </a>
       <div class="menu-search-container">
         <input type="text" data-translate-placeholder="menu.searchPlaceholder"
-          placeholder="aramak istediğiniz kelimeyi yazınız..." class="menu-search-input">
+          placeholder="Search..." class="menu-search-input">
         <button class="menu-search-button"><i class="fas fa-search"></i></button>
       </div>
       <div class="menu-header-actions-fs">
         <div class="lang-switch">
-          <a href="online-bilet.html" class="trigger-button">Online Ticket</a>
-          <a href="#" class="" data-lang="tr" data-translate="lang.tr">TR</a> | <a href="" class="active" data-lang="en"
-            data-translate="lang.en">EN</a>
+          <a href="online-bilet.html" class="trigger-button">Onlıne Ticket</a>
+          <a href="../tr/index.html" class="" data-lang="tr" data-translate="lang.tr">TR</a> | <a href="home.html"
+            class="active" data-lang="en" data-translate="lang.en">EN</a>
         </div>
         <button class="close-menu-btn" aria-label="Menüyü Kapat">
           <i class="fas fa-times"></i>
@@ -105,49 +548,52 @@
         <!-- Başlığa tıklanınca menüyü kapatmak için nav-toggle-button ekledik -->
         <h3 class="nav-toggle-button">LES-EXPO</h3>
         <ul>
-          <li><a href="hakkimizda.html">About</a></li>
-          <li><a href="fuar-kunyesi.html">Exhibition Identification</a></li>
-          <li><a href="fuar-alani.html">Exhibition Area</a></li>
-          <li><a href="ulasim.html">How To Reach</a></li>
-          <li><a href="fuar-sonuc-raporu.html">Post Show Report</a></li>
+          <li><a href="about-us.html">About</a></li>
+          <li><a href="exhibition-identification.html">Exhibition Identification</a></li>
+          <li><a href="exhibition-area.html">Exhibition Area</a></li>
+          <li><a href="how-to-reach.html">How To Reach?</a></li>
+          <li><a href="show-report.html">Post Show Report</a></li>
         </ul>
       </div>
       <div class="menu-column">
         <h3 class="nav-toggle-button">Exhibitor</h3>
         <ul>
-          <li><a href="katilimci-profili.html">Exhibitor Profile</a></li>
-          <li><a href="on-kayit-formu.html">Pre-Registration Form</a></li>
-          <li><a href="katilimci-profili.html">Why Should You Exhibit ? </a></li>
-          <li><a href="katilimci-listesi.html">2025 Exhibitor List</a></li>
+          <li><a href="exhibitor-profile">Exhibitor Profile</a></li>
+          <li><a href="pre-registration-form.html">Pre-Registration Form</a></li>
+          <li><a href="why-exhibit">Why Should You Exhibit?</a></li>
+          <li><a href="exhibitor-list">2025 Exhibitor List</a></li>
         </ul>
       </div>
       <div class="menu-column">
         <h3 class="nav-toggle-button" data-translate="menu.visitBFM">Visitor</h3>
         <ul>
-          <li><a href="ziyaretci-profili.html">Visitor Profile</a></li>
-          <li><a href="neden-ziyaret-etmelisiniz.html">Why Should You Visit ? </a></li>
+          <li><a href="visitor-profile.html">Visitor Profile</a></li>
+          <li><a href="why-visit.html">Why Should You Visit?</a></li>
           <li><a href="sss.html">Frequently Asked Questions</a></li>
         </ul>
       </div>
       <div class="menu-column">
         <h3 class="nav-toggle-button">Events</h3>
         <ul>
-          <li><a href="b2b-toplantıları.html">B2B Meetings</a></li>
-          <li><a href="ilham-alanlari.html">Inspiration Zones</a></li>
-          <li><a href="dialogs.html">LES-EXPO Dialogs</a></li>
+          <li><a href="b2b-meeting.html">B2B Toplantıları</a></li>
+          <li><a href="#">İlham Alanları</a></li>
+          <li><a href="#">LES-EXPO Dialogs</a></li>
         </ul>
       </div>
       <div class="menu-column">
         <h3 class="nav-toggle-button">Media</h3>
         <ul>
-          <li><a href="medya-logo.html">Logo</a></li>
+          <li><a href="media-logo.html">Logo</a></li>
+          <li><a href="all-news.html">News</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Corporate Identity</a></li>
         </ul>
       </div>
 
       <div class="menu-column">
-        <h3 class="nav-toggle-button">Contact</h3>
+        <h3 class="nav-toggle-button">Contact Us</h3>
         <ul>
-          <li><a href="iletisim.html">contact information</a></li>
+          <li><a href="contact.html">Contact Information</a></li>
         </ul>
       </div>
     </div>
@@ -184,21 +630,17 @@
         <section class="hero">
           <div class="hero-content">
             <h1>LES-EXPO 2025</h1>
-            <p> 9-11 September 2025, at the Istanbul Fair Center !</p>
+            <p> World Freight Engineering Services Companies Meet in Istanbul on September 9-11, 2025 </p>
           </div>
           <div class="stats">
             <h4>LES-EXPO 2025 WITH NUMBERS</h4>
             <div class="stat-item">
-              <h2>11</h2>
-              <span>hall</span>
-            </div>
-            <div class="stat-item">
-              <h2>200.000</h2>
+              <h2>28.000</h2>
               <span>m² area</span>
             </div>
             <div class="stat-item">
-              <h2>175.000+</h2>
-              <span>visits</span>
+              <h2>Visitors From</h2>
+              <span>3 Continents</span>
             </div>
           </div>
         </section>
@@ -240,118 +682,81 @@
   <!-- Slider End -->
 
   <!-- Section-1 Start -->
-  <section class="event-section">
-    <div class="event-container">
-      <!-- Slider kontrolleri için gizli radio butonları -->
-      <input type="radio" name="slider" id="slide1" checked>
-      <input type="radio" name="slider" id="slide2">
-      <input type="radio" name="slider" id="slide3">
-
-      <!-- Slider içeriği -->
-      <div class="slider-container-section">
-        <div class="slider-wrapper-section">
-          <!-- Slide 1 -->
-          <div class="slide-section1">
-            <div class="event-content">
-              <div class="event-text">
-                <h2 class="event-title">THE GREAT MEETING OF THE SECTOR</h2>
-                <p class="event-description">
-                  LES-EXPO <span class="highlight">Freight Engineering </span> Freight Engineering Services Fair <span
-                    class="highlight">will be held on 9-11 September</span> 9-11 September <span class="highlight">at the Istanbul Expo Center.</span>
-                </p>
-                <a href="#" class="event-button">
-                  <i class="fas fa-arrow-right-long"></i> More Information
-                </a>
-              </div>
-              <div class="event-image">
-                <img src="./images/SANY.png" alt="LES-EXPO Fuarı Görüntüsü">
-              </div>
+  <section class="section-1-sc">
+    <div class="slider-container-sc">
+      <div class="slider-sc">
+        <!-- Slide 1 -->
+        <div class="slide-sc active-sc">
+          <div class="slide-content-sc">
+            <div class="text-content-sc">
+              <h2 class="mt-5">The cooperation protocol for the LES-EXPO Fair, which will bring together all
+                stakeholders of freight <span class="highlight-sc">transportation requiring engineering, was
+                  signed.</span></h2>
+              <p>
+                It is the first specialized fair that will bring together service providers and service recipients in
+                the freight engineering services ecosystem, which contributes over 12 billion dollars to the Turkish
+                economy,<span class="highlight-sc">and it is being held in Istanbul.</span></p>
+              <a href="blog-single-page.html" class="btn-sc">More Information</a>
+            </div>
+            <div class="media-content-sc">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/I_Wu55RfC4I"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
             </div>
           </div>
+        </div>
 
-          <!-- Slide 2 -->
-          <div class="slide-section1">
-            <div class="event-content">
-              <div class="event-text">
-                <h2 class="event-title">ESTA 2025 EXCELLENCE AWARDS HAVE FOUND THEIR WINNERS!</h2>
-                <p class="event-description">
-                  <span class="highlight">YMB üyesi YILNAK Eğitim kategorisinde ödülün sahibi oldu</span> <span
-                    class="highlight"></span><span class="highlight">
-                  </span>
-                </p>
-                <a href="#" class="event-button">
-                  <i class="fas fa-arrow-right-long"></i> More Information
-                </a>
-              </div>
-              <div class="event-image">
-                <img src="./images/ymb-odul.jpeg" alt="LES-EXPO Fuarı Görüntüsü">
-              </div>
+        <!-- Slide 2 -->
+        <div class="slide-sc">
+          <div class="slide-content-sc">
+            <div class="text-content-sc">
+              <h2><span class="highlight-sc">ESTA 2025 EXCELLENCE AWARDS HAVE FOUND THEIR WINNERS!</span></h2>
+              <p>YMB member YILNAK won the award in the Education category</p>
+              <a href="blog-single-page.html" class="btn-sc">More Information</a>
+            </div>
+            <div class="media-content-sc">
+              <img src="./images/ymb-odul.jpeg" alt="Yük taşımacılığı teknolojileri">
             </div>
           </div>
+        </div>
 
-          <!-- Slide 3 -->
-          <div class="slide-section1">
-            <div class="event-content">
-              <div class="event-text">
-                <h2 class="event-title"></h2>
-                <p class="event-description">
-                  Mühendislik gerektiren yük taşımaılığının tüm paydaşlarını buluşturacak olan <span
-                    class="highlight">LES-EXPO Fuarı'nın iş birliği protokolü imzalandı</span>. <span
-                    class="highlight">Türkiye ekonomisine yaklaşık 12 milyar doların üzerinde katkı sağlayan yük
-                    mühendisliği hizmetleri ekosistemindeki hizmet alan ve hizmet verenleri bir araya getirecek ilk
-                    ihtisas fuarı </span> ve <span class="highlight">İstanbul'da düzenleniyor.</span>
-
-                </p>
-                <a href="#" class="event-button">
-                  <i class="fas fa-arrow-right-long"></i> More Information
-                </a>
-              </div>
-              <div class="event-image">
-                <iframe width="1415" height="900" src="https://www.youtube.com/embed/I_Wu55RfC4I"
-                  title="'Yük Mühendisliği Hizmetleri' alanında dünyanın ilk fuarı İstanbul'da düzenleniyor"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-              </div>
+        <!-- Slide 3 -->
+        <div class="slide-sc">
+          <div class="slide-content-sc">
+            <div class="text-content-sc">
+              <h2><span class="highlight-sc">THE GREAT MEETING OF THE SECTOR</span></h2>
+              <p>LES-EXPO Freight Engineering Services Fair will be held on 9-11 September at the Istanbul Fair Center.
+              </p>
+              <a href="blog-single-page.html" class="btn-sc">More Information</a>
+            </div>
+            <div class="media-content-sc">
+              <img src="./images/SANY.png" alt="Sürdürülebilir lojistik">
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Slider navigasyon -->
-      <div class="event-navigation-section1">
-        <div class="nav-buttons-section1">
-          <label for="slide3" class="nav-button-section1 prev" id="prev-slide1"><i
-              class="fas fa-chevron-left"></i></label>
-          <label for="slide2" class="nav-button-section1 next" id="next-slide1"><i
-              class="fas fa-chevron-right"></i></label>
+    <!-- Separate Controls Container -->
+    <div class="controls-container-sc">
+      <!-- Navigation Arrows on the left -->
+      <div class="arrows-container-sc">
+        <button class="arrow-sc prev-arrow-sc"><i class="fas fa-chevron-left"></i></button>
+        <button class="arrow-sc next-arrow-sc"><i class="fas fa-chevron-right"></i></button>
+      </div>
 
-          <label for="slide1" class="nav-button-section1 prev" id="prev-slide2"><i
-              class="fas fa-chevron-left"></i></label>
-          <label for="slide3" class="nav-button-section1 next" id="next-slide2"><i
-              class="fas fa-chevron-right"></i></label>
-
-          <label for="slide2" class="nav-button-section1 prev" id="prev-slide3"><i
-              class="fas fa-chevron-left"></i></label>
-          <label for="slide1" class="nav-button-section1 next" id="next-slide3"><i
-              class="fas fa-chevron-right"></i></label>
-        </div>
-        <div class="nav-dots">
-          <label for="slide1" class="dot" id="dot1"></label>
-          <label for="slide2" class="dot" id="dot2"></label>
-          <label for="slide3" class="dot" id="dot3"></label>
-        </div>
+      <!-- Pagination Dots on the right -->
+      <div class="pagination-sc">
+        <span class="dot-sc active-sc" data-index="0"></span>
+        <span class="dot-sc" data-index="1"></span>
+        <span class="dot-sc" data-index="2"></span>
       </div>
     </div>
   </section>
-  <section class="hero-gallery">
-    <div class="container-gallery">
-      <h1>LES-EXPO 2025</h1>
-      <h2>katılımcı profili</h2>
-      <p><strong>LES-EXPO</strong> yepyeni fuar anlayışıyla <br> <strong>Yük Mühendisliği Hizmetleri</strong> sektörünü
-        bir araya
-        getiriyor.</p>
-    </div>
+
+  <section class="mt-5">
+
   </section>
   <!-- Gallery Wrapper -->
   <div class="gallery-container-2">
@@ -377,7 +782,7 @@
           <div class="card-image" style="background-image: url('./images/zp-2.jpg');">
             <div class="card-overlay"></div>
             <div class="card-content">
-              <h3>Kaldırma ve taşıma sektörü profesyonelleri</h3>
+              <h3>Crane Manufacturers and Dealers</h3>
               <p></p>
               <!-- <div class="arrow-button">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -394,7 +799,7 @@
           <div class="card-image" style="background-image: url('./images/zp-1.jpg');">
             <div class="card-overlay"></div>
             <div class="card-content">
-              <h3>Lojistik ve taşıma sektöründen profesyoneller</h3>
+              <h3>Tow Truck Manufacturers and Dealers</h3>
               <p></p>
             </div>
           </div>
@@ -405,7 +810,7 @@
           <div class="card-image" style="background-image: url('./images/zp-3.jpg');">
             <div class="card-overlay"></div>
             <div class="card-content">
-              <h3>Yük mühendisliği uzmanları ve mühendisler</h3>
+              <h3>Trailer Manufacturers and Dealers</h3>
               <p></p>
             </div>
           </div>
@@ -416,7 +821,7 @@
           <div class="card-image" style="background-image: url('./images/zp-8.jpg');">
             <div class="card-overlay"></div>
             <div class="card-content">
-              <h3>Maden sektörü profesyonelleri</h3>
+              <h3>Equipment Manufacturers and Sellers</h3>
               <p></p>
             </div>
           </div>
@@ -427,7 +832,7 @@
           <div class="card-image" style="background-image: url('./images/zp-5.jpg');">
             <div class="card-overlay"></div>
             <div class="card-content">
-              <h3>Konteyner nakliye sektörü profesyonelleri</h3>
+              <h3>Industry Related Service Companies</h3>
               <p></p>
             </div>
           </div>
@@ -438,7 +843,7 @@
           <div class="card-image" style="background-image: url('./images/zp-6.jpg');">
             <div class="card-overlay"></div>
             <div class="card-content">
-              <h3>Yol bakım ve inşaat sektörü profesyonelleri</h3>
+              <h3>Cargo Engineering Service Companies</h3>
               <p></p>
 
             </div>
@@ -449,14 +854,56 @@
           <div class="card-image" style="background-image: url('./images/zp-7.jpg');">
             <div class="card-overlay"></div>
             <div class="card-content">
-              <h3>Makine ve ekipman tedarikçileri</h3>
+              <h3>Freight Forwarder Companies and Representatives</h3>
               <p></p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 8 -->
+        <div class="gallery-card">
+          <div class="card-image" style="background-image: url('./images/LES\ 1.jpg');">
+            <div class="card-overlay"></div>
+            <div class="card-content">
+              <h3>Ship Brokerage Companies</h3>
+              <p></p>
+
+            </div>
+          </div>
+        </div>
+        <!-- Card 9 -->
+        <div class="gallery-card">
+          <div class="card-image" style="background-image: url('./images/LES\ 2.jpg');">
+            <div class="card-overlay"></div>
+            <div class="card-content">
+              <h3>Business Organizations and Networks</h3>
+              <p></p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 9 -->
+        <div class="gallery-card">
+          <div class="card-image" style="background-image: url('./images/LES\ 5.jpg');">
+            <div class="card-overlay"></div>
+            <div class="card-content">
+              <h3>Energy Companies</h3>
+              <p></p>
+
+            </div>
+          </div>
+        </div>
+        <!-- Card 9 -->
+        <div class="gallery-card">
+          <div class="card-image" style="background-image: url('./images/LES\ 4.jpg');">
+            <div class="card-overlay"></div>
+            <div class="card-content">
+              <h3>Engineering Services Companies</h3>
+              <p></p>
+
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Brand Footer -->
   </div>
 
   <!-- Section-2 -->
@@ -464,56 +911,18 @@
     <div class="content-wrapper-3">
       <div class="text-content-3">
         <h3 class="title-3">LES-EXPO 2025</h3>
-        <h1 class="heading-3">Neden Katılmalısınız ?</h1>
-        <ul class="description-3">
-          <li>• Sektör liderleriyle buluşun</li>
-          <li>• Yenilikçi teknolojiler</li>
-          <li>• Eğitim ve seminerler</li>
-          <li>• Global ağ kurma imkanları</li>
-          <li>• Sektörel çözümleri bir arada görün</li>
-        </ul>
-        <div class="stats-3">
-          <div class="stat-item-3">
-            <div class="icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"></circle>
-                <line x1="12" y1="8" x2="12" y2="12"></line>
-                <line x1="12" y1="16" x2="12" y2="16"></line>
-              </svg>
-            </div>
-            <div>
-              <div class="number">11</div>
-              <div class="label">salon</div>
-            </div>
-          </div>
-
-          <div class="stat-item-3">
-            <div class="icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="3" y="3" width="18" height="18" rx="2"></rect>
-              </svg>
-            </div>
-            <div>
-              <div class="number">200.000</div>
-              <div class="label">m² alan</div>
-            </div>
-          </div>
-
-          <div class="stat-item-3">
-            <div class="icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="8" r="4"></circle>
-                <path d="M18 21v-2a4 4 0 0 0-4-4H10a4 4 0 0 0-4 4v2"></path>
-              </svg>
-            </div>
-            <div>
-              <div class="number">175.000+</div>
-              <div class="label">ziyaret</div>
-            </div>
-          </div>
-        </div>
+        <h1 class="heading-3">Freight Engineering Services: The Strategic Discipline of Heavy Transportation</h1>
+        <p class="description-3">Load engineering is a multidisciplinary field that involves the safe, accurate and
+          planned lifting, transportation and placement of loads of unusual size and weight. This process is not only
+          realized with vehicles, but also with the planning, analysis and decisions of the expert engineers who manage
+          these vehicles.</p>
+        <p class="description-3">Although not formally defined, load engineering encompasses critical processes such as
+          risk analysis, ground assessment, vehicle selection, and application monitoring in heavy-duty transport
+          operations by land, air, sea, rail, and sometimes even undersea.</p>
+        <p class="description-3">With the change of technology, climate and projects, the variety of cargo transported
+          is increasing, making the future role of cargo engineering specialists even more vital.</p>
         <a href="on-kayit-formu.html" class="button" target="_blank">
-          Yerinizi Ayırtın
+          Reserve Your Place
         </a>
       </div>
       <div class="image-content-3">
@@ -525,25 +934,26 @@
   <!-- Section-3 -->
   <section class="section-3">
     <div class="text-content-4">
-      <h2>YÜK MÜHENDİSLİĞİNDE GELECEĞİ LES-EXPO FUARINDA ŞEKİLLENİYOR</h2>
+      <h2 class="text-uppercase">The future of freight engineering takes shape at les-expo.</h2>
       <p>
-        LES-EXPO 2025, yük mühendisliği sektöründeki en yeni gelişmeleri, teknolojileri ve yenilikçi çözümleri bir araya
-        getiriyor. Alanında uzman firmaların ve profesyonellerin katılımıyla gerçekleşecek olan bu fuar, sektördeki en
-        son trendleri ve mühendislikteki devrim niteliğindeki yenilikleri keşfetmeniz için eşsiz bir fırsat sunuyor.
+        LES-EXPO 2025 brings together the latest developments, technologies and innovative solutions in the cargo
+        engineering sector. With the participation of expert companies and professionals in the field, this fair offers
+        a unique opportunity to discover the latest trends in the sector and revolutionary innovations in engineering.
         <br><br>
-        Yük mühendisliği alanında yeniliklerin, teknolojik atılımların ve stratejik iş birliklerinin merkezi olan
-        LES-EXPO, sektördeki tüm paydaşları aynı çatı altında toplayan uluslararası bir fuardır. Ağır yük kaldırma
-        sistemlerinden taşıma çözümlerine, yapı destek teknolojilerinden dijital planlama araçlarına kadar geniş bir
-        yelpazede ürün ve hizmetlerin sergilendiği LES-EXPO, mühendislik dünyasına yön veren buluşmalardan biridir.
+        LES-EXPO, the center of innovations, technological breakthroughs and strategic partnerships in the field of load
+        engineering, is an international fair that brings together all stakeholders in the sector under one roof.
+        Exhibiting a wide range of products and services from heavy-lifting systems to transportation solutions, from
+        structural support technologies to digital planning tools, LES-EXPO is one of the gatherings that shape the
+        world of engineering.
 
-        Fuar boyunca, sektörün lider firmaları en yeni ürünlerini ve projelerini sergilerken, ziyaretçiler güncel
-        trendleri yerinde takip etme, uygulamalı gösterimlerle teknolojileri deneyimleme ve alanında uzman isimlerle
-        doğrudan iletişim kurma fırsatı yakalar.
+        Throughout the fair, leading companies in the sector exhibit their latest products and projects, while visitors
+        have the opportunity to follow current trends on site, experience technologies with practical demonstrations,
+        and communicate directly with experts in their fields.
         <br><br>
-        LES-EXPO, yalnızca bir sergi alanı değil; aynı zamanda bilgi paylaşımının, deneyim aktarımının ve profesyonel
-        ağların kurulduğu dinamik bir platformdur. Seminerler, teknik oturumlar ve özel etkinliklerle dolu bu
-        organizasyon, hem teknik derinlik arayan profesyoneller hem de sektöre yeni adım atanlar için ilham verici bir
-        ortam sunar.
+        LES-EXPO is not only an exhibition area, but also a dynamic platform for sharing knowledge, transferring
+        experience and establishing professional networks. This event, full of seminars, technical sessions and special
+        events, offers an inspiring environment for both professionals looking for technical depth and those new to the
+        sector.
       </p>
     </div>
     <div class="image-content-3">
@@ -602,145 +1012,31 @@
   </div>
 
   <!-- Haberler Card Section -->
-
-  <div class="container-haberler">
-    <div class="header-haberler">
-      <h2><i class="fas fa-arrow-right"></i> HABERLER</h2>
-      <div class="header-right">
-        <a href="tum-haberler.html" class="all-news">TÜM HABERLER</a>
-        <div class="navigation-buttons-haberler">
-          <button class="nav-button-haberler prev-haberler"><i class="fas fa-chevron-left"></i></button>
-          <button class="nav-button-haberler next-haberler"><i class="fas fa-chevron-right"></i></button>
-        </div>
-      </div>
-    </div>
-
-    <div class="slider-container-haberler">
-      <div class="slider-haberler" id="slider-haberler">
-        <!-- Card 1 -->
-        <div class="card-haberler">
-          <div class="card-image-haberler">
-            <img src="./images/haberler-1.jpeg" alt="IDEX İstanbul Etkinliği">
-            <div class="card-date-haberler">
-              <i class="far fa-calendar-alt"></i> 05 Mayıs 2025
-            </div>
-          </div>
-          <div class="card-content-haberler">
-            <h3 class="card-title-haberler">BTSO Başkanı İbrahim Burkay, Yük Mühendisliği Birliği ile İftar Programında
-              Buluştu</h3>
-            <a href="blog-single-page.html" class="read-more-haberler">Devamını Oku <i
-                class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="card-haberler">
-          <div class="card-image-haberler">
-            <img src="./images/haberler-2.jpeg" alt="Dental Sektör Etkinliği">
-            <div class="card-date-haberler">
-              <i class="far fa-calendar-alt"></i> 04 Mayıs 2025
-            </div>
-          </div>
-          <div class="card-content-haberler">
-            <h3 class="card-title-haberler">Sistem Vinç, 700 ton kaldırma kapasiteli Demag AC 700 mobil vinci ile
-              Gebze'den Dilovası'na 155 ton ağırlığındaki trafonun tüm taşıma ve tahliye sürecini başarıyla tamamladı.
-            </h3>
-            <a href="blog-single-page.html" class="read-more-haberler">Devamını Oku <i
-                class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="card-haberler">
-          <div class="card-image-haberler">
-            <img src="./images/haberler-3.jpg" alt="Diş Hekimliği Etkinliği">
-            <div class="card-date-haberler">
-              <i class="far fa-calendar-alt"></i> 02 Mayıs 2025
-            </div>
-          </div>
-          <div class="card-content-haberler">
-            <h3 class="card-title-haberler">Yük mühendisliği şirketlerine de ulaşılabilir yatırım kredisi verilmeli</h3>
-            <a href="blog-single-page.html" class="read-more-haberler">Devamını Oku <i
-                class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="card-haberler">
-          <div class="card-image-haberler">
-            <img src="./images/haberler-4.jpg" alt="IDEX İstanbul Fırsatları">
-            <div class="card-date-haberler">
-              <i class="far fa-calendar-alt"></i> 25 Nisan 2025
-            </div>
-          </div>
-          <div class="card-content-haberler">
-            <h3 class="card-title-haberler">Üçer Vinç, Güllük Limanı'ndaki 50 tonluk gemi vincinin sökülmesini Grove
-              marka 300 tonluk vinci ile başarıyla tamamlandı.</h3>
-            <a href="blog-single-page.html" class="read-more-haberler">Devamını Oku <i
-                class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-
-        <!-- Card 5 (Extra card for continuous scrolling effect) -->
-        <div class="card-haberler">
-          <div class="card-image-haberler">
-            <img src="./images/haberler-5.jpeg" alt="IDEX İstanbul Etkinliği">
-            <div class="card-date-haberler">
-              <i class="far fa-calendar-alt"></i> 20 Nisan 2025
-            </div>
-          </div>
-          <div class="card-content-haberler">
-            <h3 class="card-title-haberler">Hareket, Abu Dabi'deki 6,00 m genişliğinde, 19,00 m uzunluğunda ve 8,00 m
-              yüksekliğinde, toplam ağırlığı 90 ton olan bir Knock-out Drum projesini başarıyla tamamladı!</h3>
-            <a href="blog-single-page.html" class="read-more-haberler">Devamını Oku <i
-                class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-
-        <!-- Card 6 (Extra card for continuous scrolling effect) -->
-        <div class="card-haberler">
-          <div class="card-image-haberler">
-            <img src="./images/haberler-6.jpeg" alt="Dental Konferans">
-            <div class="card-date-haberler">
-              <i class="far fa-calendar-alt"></i> 15 Nisan 2025
-            </div>
-          </div>
-          <div class="card-content-haberler">
-            <h3 class="card-title-haberler">SANY, Dünyanın En Büyük Arazi Vinci ile Ağır Kaldırmayı Yeniden Tanımlıyor
-            </h3>
-            <a href="blog-single-page.html" class="read-more-haberler">Devamını Oku <i
-                class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- countdown -->
 
   <div class="countdown-wrapper">
     <div class="timer">
       <div class="time-box">
         <div class="time-value" id="days">00</div>
-        <div class="time-label">GÜN</div>
+        <div class="time-label">DAYS</div>
       </div>
       <div class="time-box">
         <div class="time-value" id="hours">00</div>
-        <div class="time-label">SAAT</div>
+        <div class="time-label">HOURS</div>
       </div>
       <div class="time-box">
         <div class="time-value" id="minutes">00</div>
-        <div class="time-label">DAKİKA</div>
+        <div class="time-label">MİNUTES</div>
       </div>
       <div class="time-box">
         <div class="time-value" id="seconds">00</div>
-        <div class="time-label">SANİYE</div>
+        <div class="time-label">SECONDS</div>
       </div>
     </div>
 
     <div class="button-group">
-      <button class="btn btn-reserve"> <a href="on-kayit-formu.html">STANT REZERVASYONU</a></button>
-      <button class="btn btn-ticket"> <a href="online-bilet.html">ONLINE BİLET</a></button>
+      <button class="btn btn-reserve"> <a href="on-kayit-formu.html">STAND RESERVATION</a></button>
+      <button class="btn btn-ticket"> <a href="online-bilet.html">ONLINE TICKET</a></button>
     </div>
   </div>
 
@@ -749,10 +1045,10 @@
     <div class="footer-content mt-3">
       <div class="footer-left">
         <div class="logo-footer">
-          <img src="./images/sarı-lesexpo-tr.png" alt="">
+          <img src="./images/sarı-lesexpo-en.png" alt="">
 
         </div>
-        <p class="address">Yeşilköy Istanbul, Fuar Merkezi, 34149 Bakırköy/İstanbul</p>
+        <p class="address">Yesilkoy Istanbul, Fair Center, 34149 Bakirkoy/Istanbul</p>
         <div class="contact-info">
           <p><i class="fas fa-phone"></i> (0212) 468 52 51</p>
           <p><i class="fas fa-fax"></i> (0212) 468 52 54</p>
@@ -764,39 +1060,40 @@
         <div class="footer-column">
           <h3>LES-EXPO</h3>
           <ul>
-            <li><a href="hakkimizda.html">Hakkında</a></li>
-            <li><a href="fuar-kunyesi.html">Fuar Künyesi</a></li>
-            <li><a href="fuar-alani.html">Fuar Alanı</a></li>
-            <li><a href="ulasim.html">Nasıl Ulaşırım ?</a></li>
-            <li><a href="fuar-sonuc-raporu.html">Fuar Sonuç Raporu</a></li>
+            <li><a href="about-us.html">About</a></li>
+            <li><a href="exhibiton-identification.html">Exhibiton Identification</a></li>
+            <li><a href="exhibition-area.html">Exhibiton Area</a></li>
+            <li><a href="how-to-reach.html">How To Reach?</a></li>
+            <li><a href="show-report.html">Post Show Report</a></li>
           </ul>
         </div>
 
         <div class="footer-column">
-          <h3>KATILIMCI</h3>
+          <h3>Exhibitor</h3>
           <ul>
-            <li><a href="on-kayit-formu.html">Ön Kayıt Formu</a></li>
-            <li><a href="katilimci-profili.html">Neden Katılmalısınız ?</a></li>
-            <li><a href="katilimci-listesi.html">Katılımcı Listesi 2025</a></li>
+            <li><a href="exhibitor-profile.html">Exhibitor Profile</a></li>
+            <li><a href="pre-registration-form.html">Pre-Registration Form</a></li>
+            <li><a href="why-exhibit.html">Why Should You Exhibit</a></li>
+            <li><a href="exhibitor-list.html">2025 Exhibitor List</a></li>
           </ul>
         </div>
 
         <div class="footer-column">
-          <h3>ZİYARETÇİ</h3>
+          <h3>Visitor</h3>
           <ul>
-            <li><a href="ziyaretci-profili.html">Ziyaretçi Profili</a></li>
-            <li><a href="neden-ziyaret-etmelisiniz.html">Neden Ziyaret Etmelisiniz?</a></li>
-            <li><a href="sss.html">Sıkça Sorulan Sorular</a></li>
+            <li><a href="visitor-profile.html">Visitor Profile</a></li>
+            <li><a href="why-visit.html">Why Should You Visit?</a></li>
+            <li><a href="faq.html">Frequently Asked Questions</a></li>
           </ul>
         </div>
 
         <div class="footer-column">
-          <h3>ETKİNLİKLER</h3>
+          <h3>Events</h3>
           <ul>
-            <li><a href="b2b-toplantı.html">B2B Toplantıları</a></li>
-            <li><a href="ilham-alanları.html">İlham Alanları</a></li>
-            <li><a href="dialogs.html">LES-EXPO Dialogs</a></li>
-            <li><a href="destekler.html">Destekler</a></li>
+            <li><a href="b2b-toplantı.html">B2B Meetings</a></li>
+            <li><a href="all-news.html">News</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Corporate Identity</a></li>
           </ul>
         </div>
         <!-- <div class="footer-bottom">
@@ -810,12 +1107,220 @@
         </div> -->
   </footer>
   <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Get all slider elements
+      const slides = document.querySelectorAll(".slide-sc")
+      const dots = document.querySelectorAll(".dot-sc")
+      const prevArrow = document.querySelector(".prev-arrow-sc")
+      const nextArrow = document.querySelector(".next-arrow-sc")
+      const sliderContainer = document.querySelector(".slider-container-sc")
+      const controlsContainer = document.querySelector(".controls-container-sc")
+
+      let currentSlide = 0
+      const totalSlides = slides.length
+      let autoPlayInterval
+      const autoPlayDuration = 5000 // 5 seconds
+      let isAutoPlaying = false
+
+      // Preload all images to prevent layout shifts
+      function preloadImages() {
+        slides.forEach((slide) => {
+          const img = slide.querySelector("img")
+          if (img) {
+            const src = img.getAttribute("src")
+            if (src) {
+              const preloadImg = new Image()
+              preloadImg.src = src
+            }
+          }
+        })
+      }
+
+      // Initialize slider
+      function initSlider() {
+        // Preload images
+        preloadImages()
+
+        // Set first slide as active
+        slides[0].classList.add("active-sc")
+        dots[0].classList.add("active-sc")
+
+        // Set up event listeners
+        prevArrow.addEventListener("click", () => {
+          pauseAutoPlay()
+          showPreviousSlide()
+        })
+
+        nextArrow.addEventListener("click", () => {
+          pauseAutoPlay()
+          showNextSlide()
+        })
+
+        // Add click event to pagination dots
+        dots.forEach((dot) => {
+          dot.addEventListener("click", function () {
+            pauseAutoPlay()
+            const slideIndex = Number.parseInt(this.getAttribute("data-index"))
+            goToSlide(slideIndex)
+          })
+        })
+
+        // Handle video playback
+        slides.forEach((slide) => {
+          const iframe = slide.querySelector("iframe")
+          if (iframe) {
+            // When a slide with video becomes active
+            const observer = new MutationObserver((mutations) => {
+              mutations.forEach((mutation) => {
+                if (mutation.attributeName === "class") {
+                  if (slide.classList.contains("active-sc")) {
+                    // Reset iframe src to restart video when slide becomes active
+                    const src = iframe.getAttribute("src")
+                    iframe.setAttribute("src", src)
+                  }
+                }
+              })
+            })
+
+            observer.observe(slide, { attributes: true })
+          }
+        })
+
+        // Start autoplay
+        startAutoPlay()
+
+        // Pause autoplay on hover
+        sliderContainer.addEventListener("mouseenter", pauseAutoPlay)
+        controlsContainer.addEventListener("mouseenter", pauseAutoPlay)
+
+        // Resume autoplay on mouse leave
+        sliderContainer.addEventListener("mouseleave", startAutoPlay)
+        controlsContainer.addEventListener("mouseleave", startAutoPlay)
+      }
+
+      // Update slide classes for animation
+      function updateSlideClasses() {
+        // Remove all classes first
+        slides.forEach((slide) => {
+          slide.classList.remove("active-sc", "prev-sc", "next-sc")
+        })
+
+        // Add active class to current slide
+        slides[currentSlide].classList.add("active-sc")
+
+        // Add prev class to previous slide
+        const prevSlide = currentSlide - 1 < 0 ? totalSlides - 1 : currentSlide - 1
+        slides[prevSlide].classList.add("prev-sc")
+
+        // Add next class to next slide
+        const nextSlide = (currentSlide + 1) % totalSlides
+        slides[nextSlide].classList.add("next-sc")
+      }
+
+      // Go to specific slide
+      function goToSlide(index) {
+        if (index < 0) {
+          index = totalSlides - 1
+        } else if (index >= totalSlides) {
+          index = 0
+        }
+
+        // Remove active class from current dot
+        dots[currentSlide].classList.remove("active-sc")
+
+        // Set new current slide
+        currentSlide = index
+
+        // Update slide classes for animation
+        updateSlideClasses()
+
+        // Add active class to new current dot
+        dots[currentSlide].classList.add("active-sc")
+      }
+
+      // Show previous slide
+      function showPreviousSlide() {
+        goToSlide(currentSlide - 1)
+      }
+
+      // Show next slide
+      function showNextSlide() {
+        goToSlide(currentSlide + 1)
+      }
+
+      // Start auto play
+      function startAutoPlay() {
+        if (!isAutoPlaying) {
+          isAutoPlaying = true
+
+          autoPlayInterval = setInterval(() => {
+            showNextSlide()
+          }, autoPlayDuration)
+        }
+      }
+
+      // Pause auto play
+      function pauseAutoPlay() {
+        if (isAutoPlaying) {
+          isAutoPlaying = false
+          clearInterval(autoPlayInterval)
+        }
+      }
+
+      // Handle keyboard navigation
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") {
+          pauseAutoPlay()
+          showPreviousSlide()
+        } else if (e.key === "ArrowRight") {
+          pauseAutoPlay()
+          showNextSlide()
+        }
+      })
+
+      // Handle swipe gestures for mobile
+      let touchStartX = 0
+      let touchEndX = 0
+
+      sliderContainer.addEventListener(
+        "touchstart",
+        (e) => {
+          pauseAutoPlay()
+          touchStartX = e.changedTouches[0].screenX
+        },
+        false,
+      )
+
+      sliderContainer.addEventListener(
+        "touchend",
+        (e) => {
+          touchEndX = e.changedTouches[0].screenX
+          handleSwipe()
+        },
+        false,
+      )
+
+      function handleSwipe() {
+        const swipeThreshold = 50 // Minimum distance required for swipe
+
+        if (touchEndX < touchStartX - swipeThreshold) {
+          // Swipe left, show next slide
+          showNextSlide()
+        } else if (touchEndX > touchStartX + swipeThreshold) {
+          // Swipe right, show previous slide
+          showPreviousSlide()
+        }
+      }
+
+      // Initialize the slider
+      initSlider()
+    })
 
   </script>
-  
+
   <script src="stant-talebi.js"></script>
-  <script src="main.js"></script>
-  <script src="home.js"></script>
+  <script src="../tr/main.js"></script>
+  <script src="../tr/index.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js"
     integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+"
     crossorigin="anonymous"></script>
