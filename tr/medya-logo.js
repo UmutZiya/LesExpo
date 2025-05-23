@@ -27,17 +27,17 @@
             
             logos.forEach(logo => {
                 const logoCard = document.createElement('div');
-                logoCard.className = 'logo-card';
+                logoCard.className = 'logo-card-2';
                 
                 logoCard.innerHTML = `
-                    <div class="logo-img-container">
-                        <img src="${logo.imageUrl}" alt="${logo.title}" class="logo-img">
+                    <div class="logo-img-container-2">
+                        <img src="${logo.imageUrl}" alt="${logo.title}" class="logo-img-2">
                     </div>
-                    <div class="logo-info">
-                        <div class="logo-title">${logo.title}</div>
-                        <span class="logo-format">${logo.format}</span>
+                    <div class="logo-info-2">
+                        <div class="logo-title-2">${logo.title}</div>
+                        <span class="logo-format-2">${logo.format}</span>
                     </div>
-                    <button class="download-btn" onclick="downloadLogo(${logo.id})">Logoyu İndir</button>
+                    <button class="download-btn-2" onclick="downloadLogo(${logo.id})">Logoyu İndir</button>
                 `;
                 
                 container.appendChild(logoCard);
