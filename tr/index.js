@@ -57,22 +57,36 @@ updateCountdown();
 
 
 /* splash screen */
-document.addEventListener('DOMContentLoaded', function () {
-  const splash = document.getElementById('splash');
-  const mainContent = document.getElementById('main-content');
-
-  // Show splash screen for exactly 2 seconds total
-  setTimeout(function () {
-    // Fade out splash screen
-    splash.style.opacity = '0';
-
-    // After transition completes, hide splash and show main content
-    setTimeout(function () {
-      splash.style.display = 'none';
-      mainContent.style.display = 'block';
-    }, 300);
-  }, 2000); // Exactly 2 seconds as requested
-});
+    document.addEventListener('DOMContentLoaded', function() {
+            const splash = document.getElementById('splash');
+            const mainContent = document.getElementById('main-content');
+            
+            // Check if user has seen splash screen in this session
+            const hasSeenSplashThisSession = sessionStorage.getItem('lesExpoSplashSeen');
+            
+            if (hasSeenSplashThisSession) {
+                // User has seen splash in this session (navigating within site), skip splash screen
+                splash.style.display = 'none';
+                mainContent.style.display = 'block';
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            } else {
+                // New session (new tab/window or first visit), show splash screen
+                setTimeout(function() {
+                    // Mark that user has seen splash in this session
+                    sessionStorage.setItem('lesExpoSplashSeen', 'true');
+                    
+                    // Fade out splash screen
+                    splash.style.opacity = '0';
+                    
+                    // After transition completes, hide splash and show main content
+                    setTimeout(function() {
+                        splash.style.display = 'none';
+                        mainContent.style.display = 'block';
+                        document.body.style.overflow = 'auto'; // Re-enable scrolling
+                    }, 300);
+                }, 2000); // Exactly 2 seconds as requested
+            }
+        });
 
 
 /* Section-1 sc */
