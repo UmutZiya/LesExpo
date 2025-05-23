@@ -89,19 +89,12 @@
     <div class="fullscreen-menu">
         <div class="menu-header">
             <a href="index.html" class="logo-menu">
-                <!-- Menüdeki logo -->
                 <img src="./images/beyaz-lesexpo-tr.png" alt="Rising City & Yapı ve Yaşam Fuarı Logo" class="fs-2">
             </a>
-            <div class="menu-search-container">
-                <input type="text" data-translate-placeholder="menu.searchPlaceholder"
-                    placeholder="aramak istediğiniz kelimeyi yazınız..." class="menu-search-input">
-                <button class="menu-search-button"><i class="fas fa-search"></i></button>
-            </div>
             <div class="menu-header-actions-fs">
                 <div class="lang-switch">
                     <a href="online-bilet.html" class="trigger-button">Online Bilet</a>
-                    <a href="#" class="active" data-lang="tr" data-translate="lang.tr">TR</a> | <a href="" class=""
-                        data-lang="en" data-translate="lang.en">EN</a>
+                    <a href="#" class="active" data-lang="tr" data-translate="lang.tr">TR</a> | <a href="" class="" data-lang="en" data-translate="lang.en">EN</a>
                 </div>
                 <button class="close-menu-btn" aria-label="Menüyü Kapat">
                     <i class="fas fa-times"></i>
@@ -395,58 +388,19 @@
 
                     <!-- National Fairs Section -->
                     <div class="section-title mb-3">Firmanızın Ulusal Fuarlara Katılımı</div>
-                    <div class="row mb-4">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="ulusalFuarAdi">Fuar Adı</label>
-                                <input type="text" class="form-control" id="ulusalFuarAdi">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="ulusalKatilimYili">Katılım Yılı</label>
-                                <input type="text" class="form-control" id="ulusalKatilimYili">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mb-4">
-                        <div class="col-12 text-end">
-                            <button type="button" class="btn btn-dark">Yeni Ekle</button>
-                        </div>
-                    </div>
-
-                    <!-- International Fairs Section -->
-                    <div class="section-title mb-3">Firmanızın Uluslararası Fuarlara Katılımı</div>
-                    <div class="row mb-4">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="uluslararasiFuarAdi">Fuar Adı</label>
-                                <input type="text" class="form-control" id="uluslararasiFuarAdi">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="uluslararasiKatilimYili">Katılım Yılı</label>
-                                <input type="text" class="form-control" id="uluslararasiKatilimYili">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mb-4">
-                        <div class="col-12 text-end">
-                            <button type="button" class="btn btn-dark">Yeni Ekle</button>
-                        </div>
-                    </div>
-
-                    <!-- Certificates Section -->
-                    <div class="section-title mb-3">Sertifikalarınız Ve Ödülleriniz</div>
-                    <div class="row mb-4">
-                        <div class="col-12">
-                            <div class="form-group">
-                                <div class="file-upload">
-                                    <div class="file-select">
-                                        <div class="file-select-button" id="fileName">Dosya Seç</div>
-                                        <div class="file-select-name" id="noFile">Dosya seçilmedi</div>
-                                        <input type="file" name="chooseFile" id="chooseFile">
+                    <div id="nationalFairsContainer">
+                        <div class="form-row-container">
+                            <div class="row mb-4 national-fair-row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="ulusalFuarAdi">Fuar Adı</label>
+                                        <input type="text" class="form-control" id="ulusalFuarAdi">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="ulusalKatilimYili">Katılım Yılı</label>
+                                        <input type="text" class="form-control" id="ulusalKatilimYili">
                                     </div>
                                 </div>
                             </div>
@@ -454,7 +408,58 @@
                     </div>
                     <div class="row mb-4">
                         <div class="col-12 text-end">
-                            <button type="button" class="btn btn-dark">Yeni Ekle</button>
+                            <button type="button" class="btn btn-dark" id="addNationalFair">Yeni Ekle</button>
+                        </div>
+                    </div>
+
+                    <!-- International Fairs Section -->
+                    <div class="section-title mb-3">Firmanızın Uluslararası Fuarlara Katılımı</div>
+                    <div id="internationalFairsContainer">
+                        <div class="form-row-container">
+                            <div class="row mb-4 international-fair-row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="uluslararasiFuarAdi">Fuar Adı</label>
+                                        <input type="text" class="form-control" id="uluslararasiFuarAdi">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="uluslararasiKatilimYili">Katılım Yılı</label>
+                                        <input type="text" class="form-control" id="uluslararasiKatilimYili">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-12 text-end">
+                            <button type="button" class="btn btn-dark" id="addInternationalFair">Yeni Ekle</button>
+                        </div>
+                    </div>
+
+                    <!-- Certificates Section -->
+                    <div class="section-title mb-3">Sertifikalarınız Ve Ödülleriniz</div>
+                    <div id="certificatesContainer">
+                        <div class="form-row-container">
+                            <div class="row mb-4 certificate-row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <div class="file-upload">
+                                            <div class="file-select">
+                                                <div class="file-select-button" id="fileName">Dosya Seç</div>
+                                                <div class="file-select-name" id="noFile">Dosya seçilmedi</div>
+                                                <input type="file" name="chooseFile" id="chooseFile">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-12 text-end">
+                            <button type="button" class="btn btn-dark" id="addCertificate">Yeni Ekle</button>
                         </div>
                     </div>
 

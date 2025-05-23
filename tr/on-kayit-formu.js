@@ -1,4 +1,3 @@
-
         /* Form Section */
    // Ülke bilgileri (şehirler, telefon kodu ve bayrak)
         const countries = {
@@ -244,4 +243,117 @@
         document.getElementById('chooseFile').addEventListener('change', function() {
             const fileName = this.files[0] ? this.files[0].name : 'Dosya seçilmedi';
             document.getElementById('noFile').textContent = fileName;
+        });
+
+        // Yeni Ekle butonları için fonksiyonlar
+        document.addEventListener('DOMContentLoaded', function() {
+            // Çarpı butonu oluşturma fonksiyonu
+            function createRemoveButton() {
+                const removeBtn = document.createElement('button');
+                removeBtn.type = 'button';
+                removeBtn.className = 'remove-form-btn';
+                removeBtn.innerHTML = '×';
+                removeBtn.addEventListener('click', function() {
+                    this.closest('.form-row-container').remove();
+                });
+                return removeBtn;
+            }
+
+            // Ulusal Fuarlar için
+            const addNationalFairBtn = document.getElementById('addNationalFair');
+            const nationalFairsContainer = document.getElementById('nationalFairsContainer');
+            let nationalFairCount = 1;
+
+            addNationalFairBtn.addEventListener('click', function() {
+                const newContainer = document.createElement('div');
+                newContainer.className = 'form-row-container';
+                const newRow = document.querySelector('.national-fair-row').cloneNode(true);
+                nationalFairCount++;
+                
+                // Yeni input ID'lerini güncelle
+                const inputs = newRow.querySelectorAll('input');
+                inputs.forEach(input => {
+                    const oldId = input.id;
+                    input.id = oldId + nationalFairCount;
+                    input.value = ''; // Değerleri temizle
+                });
+                
+                // Label'ları güncelle
+                const labels = newRow.querySelectorAll('label');
+                labels.forEach(label => {
+                    const oldFor = label.getAttribute('for');
+                    label.setAttribute('for', oldFor + nationalFairCount);
+                });
+                
+                // Çarpı butonunu ekle
+                newContainer.appendChild(createRemoveButton());
+                newContainer.appendChild(newRow);
+                nationalFairsContainer.appendChild(newContainer);
+            });
+
+            // Uluslararası Fuarlar için
+            const addInternationalFairBtn = document.getElementById('addInternationalFair');
+            const internationalFairsContainer = document.getElementById('internationalFairsContainer');
+            let internationalFairCount = 1;
+
+            addInternationalFairBtn.addEventListener('click', function() {
+                const newContainer = document.createElement('div');
+                newContainer.className = 'form-row-container';
+                const newRow = document.querySelector('.international-fair-row').cloneNode(true);
+                internationalFairCount++;
+                
+                // Yeni input ID'lerini güncelle
+                const inputs = newRow.querySelectorAll('input');
+                inputs.forEach(input => {
+                    const oldId = input.id;
+                    input.id = oldId + internationalFairCount;
+                    input.value = ''; // Değerleri temizle
+                });
+                
+                // Label'ları güncelle
+                const labels = newRow.querySelectorAll('label');
+                labels.forEach(label => {
+                    const oldFor = label.getAttribute('for');
+                    label.setAttribute('for', oldFor + internationalFairCount);
+                });
+                
+                // Çarpı butonunu ekle
+                newContainer.appendChild(createRemoveButton());
+                newContainer.appendChild(newRow);
+                internationalFairsContainer.appendChild(newContainer);
+            });
+
+            // Sertifikalar için
+            const addCertificateBtn = document.getElementById('addCertificate');
+            const certificatesContainer = document.getElementById('certificatesContainer');
+            let certificateCount = 1;
+
+            addCertificateBtn.addEventListener('click', function() {
+                const newContainer = document.createElement('div');
+                newContainer.className = 'form-row-container';
+                const newRow = document.querySelector('.certificate-row').cloneNode(true);
+                certificateCount++;
+                
+                // Yeni input ID'lerini güncelle
+                const inputs = newRow.querySelectorAll('input');
+                inputs.forEach(input => {
+                    const oldId = input.id;
+                    input.id = oldId + certificateCount;
+                    input.value = ''; // Değerleri temizle
+                });
+                
+                // Dosya seçimi için event listener ekle
+                const fileInput = newRow.querySelector('input[type="file"]');
+                const fileNameDisplay = newRow.querySelector('.file-select-name');
+                
+                fileInput.addEventListener('change', function() {
+                    const fileName = this.files[0] ? this.files[0].name : 'Dosya seçilmedi';
+                    fileNameDisplay.textContent = fileName;
+                });
+                
+                // Çarpı butonunu ekle
+                newContainer.appendChild(createRemoveButton());
+                newContainer.appendChild(newRow);
+                certificatesContainer.appendChild(newContainer);
+            });
         });

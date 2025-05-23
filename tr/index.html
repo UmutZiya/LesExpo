@@ -93,18 +93,31 @@
           <a href="index.html" class="active" data-lang="tr" data-translate="lang.tr">TR</a> | <a href="../en/home.html"
             class="" data-lang="en" data-translate="lang.en">EN</a>
         </div>
-        <!-- nav-toggle-button class'ı menüyü açar -->
-
+        <div class="mobile-actions">
+          <button class="search-toggle-button" aria-label="Arama">
+            <i class="fas fa-search"></i>
+          </button>
+          <button class="mobile-menu-toggle nav-toggle-button" data-translate-aria-label="menu.toggleAriaLabel"
+            aria-label="Menüyü Aç/Kapat">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
       </div>
 
-      <!-- Mobil için Hamburger İkonu (nav-toggle-button class'ı menüyü açar/kapatır) -->
-      <button class="mobile-menu-toggle nav-toggle-button" data-translate-aria-label="menu.toggleAriaLabel"
-        aria-label="Menüyü Aç/Kapat">
-        <i class="fas fa-bars"></i>
-      </button>
     </div>
   </header>
   <!-- Header End -->
+  <!-- Arama Çubuğu -->
+  <div class="search-overlay">
+    <div class="search-container">
+      <div class="search-content">
+        <input type="text" class="search-input" placeholder="Aramak istediğiniz kelimeyi yazınız...">
+        <button class="search-close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+  </div>
   <!-- Tam Ekran Overlay Menü -->
   <div class="fullscreen-menu">
     <div class="menu-header">
@@ -112,11 +125,6 @@
         <!-- Menüdeki logo -->
         <img src="./images/beyaz-lesexpo-tr.png" alt="Rising City & Yapı ve Yaşam Fuarı Logo" class="fs-2">
       </a>
-      <div class="menu-search-container">
-        <input type="text" data-translate-placeholder="menu.searchPlaceholder"
-          placeholder="aramak istediğiniz kelimeyi yazınız..." class="menu-search-input">
-        <button class="menu-search-button"><i class="fas fa-search"></i></button>
-      </div>
       <div class="menu-header-actions-fs">
         <div class="lang-switch">
           <a href="online-bilet.html" class="trigger-button">Online Bilet</a>
@@ -216,7 +224,7 @@
         <section class="hero">
           <div class="hero-content">
             <h1>LES-EXPO 2025</h1>
-            <p> Dünya Yük Mühendisliği Hizmetleri Firmaları 9-11 Eylül 2025 de İstanbul’da Buluşuyor </p>
+            <p> Dünya Yük Mühendisliği Hizmetleri Firmaları 9-11 Eylül 2025 de İstanbul'da Buluşuyor </p>
           </div>
           <div class="stats">
             <h4>RAKAMLAR İLE LES-EXPO 2025</h4>
@@ -275,7 +283,7 @@
         <div class="slide-sc active-sc">
           <div class="slide-content-sc">
             <div class="text-content-sc">
-              <h2 class="mt-5">Mühendislik gerektiren yük taşımacılığının tüm paydaşlarını buluşturacak olan <span
+              <h2 class="mt-5">Mühendislik gerektiren yük taşımacılığın tüm paydaşlarını buluşturacak olan <span
                   class="highlight-sc">LES-EXPO Fuarı'nın iş birliği protokolü imzalandı.</span></h2>
               <p>Türkiye ekonomisine yaklaşık 12 milyar doların üzerinde katkı sağlayan yük mühendisliği hizmetleri
                 ekosistemindeki hizmet alan ve hizmet verenleri bir araya getirecek ilk ihtisas fuarı <span

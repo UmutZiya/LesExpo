@@ -300,3 +300,47 @@ document.addEventListener("DOMContentLoaded", () => {
   initSlider()
 })
 
+/* Search Functionality */
+document.addEventListener('DOMContentLoaded', function() {
+  // Arama butonunu seç
+  const searchToggleButton = document.querySelector('.search-toggle-button');
+  const searchOverlay = document.querySelector('.search-overlay');
+  const searchClose = document.querySelector('.search-close');
+  const searchInput = document.querySelector('.search-input');
+
+  // Arama butonuna tıklandığında
+  searchToggleButton.addEventListener('click', function() {
+    searchOverlay.classList.add('active');
+    searchInput.focus();
+  });
+
+  // Kapatma butonuna tıklandığında
+  searchClose.addEventListener('click', function() {
+    searchOverlay.classList.remove('active');
+  });
+
+  // ESC tuşuna basıldığında
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && searchOverlay.classList.contains('active')) {
+      searchOverlay.classList.remove('active');
+    }
+  });
+
+  // Arama çubuğuna tıklandığında overlay'i kapatma
+  searchOverlay.addEventListener('click', function(e) {
+    if (e.target === searchOverlay) {
+      searchOverlay.classList.remove('active');
+    }
+  });
+
+  // Enter tuşuna basıldığında arama yap
+  searchInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+      const searchTerm = searchInput.value.trim();
+      if (searchTerm) {
+        window.location.href = `arama.html?q=${encodeURIComponent(searchTerm)}`;
+      }
+    }
+  });
+});
+
